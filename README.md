@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VOLT - Scroll Portfolio Experience
 
-## Getting Started
+Landing page conceitual criada para portfólio, com foco em direção visual, ritmo de scroll, transições sticky e animações expressivas para uma marca fictícia de bebida energética.
 
-First, run the development server:
+O projeto prioriza impacto visual e exploração de motion design no navegador. Performance, acessibilidade e responsividade são tratadas como suporte para a experiência, sem remover a complexidade intencional das animações.
+
+## Stack
+
+- Next.js 16 com App Router
+- React 19
+- Tailwind CSS 4
+- Framer Motion para entradas, reveals e microinterações
+- GSAP ScrollTrigger para sincronização com scroll
+- Lenis para suavização do scroll
+- next/image para otimização dos assets visuais
+- Lucide React para ícones
+
+## Direção de motion
+
+A home é estruturada como uma sequência de cenas sticky. Cada seção entra por cima da anterior com radius, sombra e clip controlado para reforçar a sensação de páginas coreografadas, não apenas blocos empilhados.
+
+O scroll suave usa Lenis integrado ao ticker do GSAP. Em usuários com `prefers-reduced-motion: reduce`, a suavização é desativada e o Framer Motion respeita a preferência do sistema, mantendo a experiência principal completa para quem não solicitou redução de movimento.
+
+## Estrutura principal
+
+- `app/page.tsx`: ordem narrativa das seções e alturas de scroll.
+- `app/providers.tsx`: integração Lenis, GSAP e configuração global de motion.
+- `app/globals.css`: tokens visuais, reset, estados de foco e estilos do sticky shell.
+- `components/sections`: cenas principais da landing.
+- `components/ui`: utilitários de motion, sticky, parallax, marquee e componentes reutilizáveis.
+- `public/images`: assets WebP usados na composição visual.
+
+## Scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Qualidade visual
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Antes de publicar ou gravar o projeto para portfólio, valide:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Hero em 390px, 768px e desktop amplo.
+- Transições sticky durante scroll rápido e scroll lento.
+- Cards de sabores e CTA duplo em mobile.
+- Warnings do Next relacionados a imagens.
+- `npm run lint` e `npm run build`.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

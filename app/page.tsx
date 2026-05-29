@@ -1,65 +1,109 @@
-import Image from "next/image";
+import { StickyStack } from '@/components/ui/StickyStack'
+import { StickySection } from '@/components/ui/StickySection'
+
+import { HeroSection } from '@/components/sections/HeroSection'
+import { ManifestoSection } from '@/components/sections/ManifestoSection'
+import { GaleriaSection } from '@/components/sections/GaleriaSection'
+import { PropostaSection } from '@/components/sections/PropostaSection'
+import { HeroProdutoSection } from '@/components/sections/HeroProdutoSection'
+import { SaboresSection } from '@/components/sections/SaboresSection'
+import { FormulaSection } from '@/components/sections/FormulaSection'
+import { RotinaSection } from '@/components/sections/RotinaSection'
+import { UGCSection } from '@/components/sections/UGCSection'
+import { CTADuploSection } from '@/components/sections/CTADuploSection'
+import { TestemunhosSection } from '@/components/sections/TestemunhosSection'
+import { FAQSection } from '@/components/sections/FAQSection'
+import { OndeEncontrarSection } from '@/components/sections/OndeEncontrarSection'
+import { CTAFinalSection } from '@/components/sections/CTAFinalSection'
+import { FooterSection } from '@/components/sections/FooterSection'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <main aria-label="page" className="w-full">
+        <StickyStack>
+          
+          {/* 1. Hero */}
+          <StickySection zIndex={10} bgColor="var(--cream)" scrollHeight="150vh">
+            <HeroSection />
+          </StickySection>
+
+          {/* 2. Manifesto */}
+          <StickySection zIndex={20} bgColor="var(--cream)" scrollHeight="120vh">
+            <ManifestoSection />
+          </StickySection>
+
+          {/* 3. Galeria Lifestyle */}
+          <StickySection zIndex={30} bgColor="var(--cream)" scrollHeight="150vh">
+            <GaleriaSection />
+          </StickySection>
+
+          {/* 4. Proposta de Valor */}
+          <StickySection zIndex={40} bgColor="#d9e979" scrollHeight="150vh">
+            <PropostaSection />
+          </StickySection>
+
+          {/* 5. Hero Produto (Parallax Cielo) */}
+          {/* Note: This section handles its own background so bgColor is dark fallback */}
+          <StickySection zIndex={50} bgColor="#1A1A1A" scrollHeight="130vh">
+            <HeroProdutoSection />
+          </StickySection>
+
+          {/* 6. Sabores */}
+          <StickySection zIndex={60} bgColor="var(--cream)" scrollHeight="140vh">
+            <SaboresSection />
+          </StickySection>
+
+          {/* 7. Fórmula Inteligente */}
+          <StickySection zIndex={70} bgColor="#FFFFFF" scrollHeight="120vh">
+            <FormulaSection />
+          </StickySection>
+
+          {/* 8. Rotina */}
+          <StickySection zIndex={80} bgColor="var(--olive)" scrollHeight="130vh">
+            <RotinaSection />
+          </StickySection>
+
+          {/* 9. UGC (Vida Real) */}
+          <StickySection zIndex={90} bgColor="var(--cream)" scrollHeight="150vh">
+            <UGCSection />
+          </StickySection>
+
+          {/* 10. CTA Duplo */}
+          <StickySection zIndex={100} bgColor="var(--cream)" scrollHeight="130vh">
+            <CTADuploSection />
+          </StickySection>
+
+          {/* 11. Testemunhos */}
+          <StickySection zIndex={110} bgColor="#FFFFFF" scrollHeight="100vh">
+            <TestemunhosSection />
+          </StickySection>
+
+          {/* 12. FAQ */}
+          <StickySection zIndex={120} bgColor="var(--cream)" scrollHeight="130vh">
+            <FAQSection />
+          </StickySection>
+
+          {/* 13. Onde Encontrar */}
+          <StickySection zIndex={130} bgColor="var(--green-volts)" scrollHeight="120vh">
+            <OndeEncontrarSection />
+          </StickySection>
+
+          {/* 14. CTA Final */}
+          <StickySection zIndex={140} bgColor="var(--cream)" scrollHeight="120vh">
+            <CTAFinalSection />
+          </StickySection>
+
+          {/* 15. Footer (Scroll Normal, no extra height to hold sticky) */}
+          <StickySection zIndex={150} bgColor="var(--green-dark)" scrollHeight="100vh">
+            <FooterSection />
+          </StickySection>
+
+        </StickyStack>
       </main>
-    </div>
-  );
+
+      <ScrollToTop />
+    </>
+  )
 }

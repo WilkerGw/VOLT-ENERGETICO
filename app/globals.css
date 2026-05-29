@@ -1,26 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap');
 @import "tailwindcss";
 
+/* ── Design Tokens ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --green-volts: #7DB33A;
+  --green-dark: #4A7A1E;
+  --green-light: #B5D56A;
+  --cream: #F5F0E8;
+  --blue-sky: #87CEEB;
+  --olive: #6B7A3A;
+  --black: #1A1A1A;
+  --white: #FFFFFF;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Reset for Lenis ── */
+html {
+  scroll-behavior: auto !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--black);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+button, [role="button"], a {
+  cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--green-volts);
+  outline-offset: 2px;
+}
+
+/* ── Typography Utilities ── */
+:where(.font-display) {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+}
+
+:where(.font-body) {
+  font-family: var(--font-body);
+}
+
+:where(.font-label) {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .parallax-layer {
+    transform: none !important;
+  }
+}
+
+/* ── iOS Safari sticky fix ── */
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--green-volts);
+  color: var(--white);
+}
+
+/* ── Shared Keyframes (GPU-friendly, no JS overhead) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatShadow {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+  50% { transform: translateX(-50%) scale(0.85); opacity: 0.15; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@supports (min-height: 100svh) {
+  .min-h-screen {
+    min-height: 100svh;
+  }
+}
+
+.sticky-scene {
+  isolation: isolate;
+  position: relative;
+}
+
+.sticky-panel {
+  background-color: var(--sticky-bg);
+  border-radius: var(--sticky-radius);
+  box-shadow: var(--sticky-shadow);
+  contain: paint;
+  min-height: var(--sticky-min-height);
+  overflow: clip;
+  position: sticky;
+  top: 0;
+  transform: translateZ(0);
+  transform-origin: center top;
+  transition: border-radius 600ms ease, box-shadow 600ms ease;
+  will-change: transform;
+}
+
+.sticky-panel::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 18%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.sticky-panel > * {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .sticky-scene {
+    height: auto !important;
+    min-height: 100svh;
+  }
+
+  .sticky-panel {
+    border-radius: var(--sticky-mobile-radius);
+    box-shadow: var(--sticky-mobile-shadow);
+    min-height: 100svh;
+    overflow: hidden;
+    position: relative;
+  }
 }
