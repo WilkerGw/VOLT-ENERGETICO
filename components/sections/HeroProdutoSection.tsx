@@ -1,88 +1,146 @@
 'use client'
+
 import { useRef } from 'react'
-import { motion, useScroll, useTransform, type Variants } from 'framer-motion'
-import { SplitHeadline } from '../ui/SplitHeadline'
-import { useStickySection } from '../ui/StickySection'
 import Image from 'next/image'
+import { motion, useReducedMotion, useScroll, useTransform, type Variants } from 'framer-motion'
+import { useStickySection } from '../ui/StickySection'
+
+const featurePills = [
+  { label: '30mg de cafeína', top: '24%', left: '64%' },
+  { label: 'Taurina + vitaminas', top: '31%', left: '59%' },
+  { label: 'Zero açúcar', top: '39%', left: '67%' },
+  { label: 'Abacaxi e hortelã', top: '49%', left: '56%' },
+  { label: '310ml gelada', top: '60%', left: '63%' },
+]
+
+const listVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.28 } },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 140, damping: 18 },
+  },
+}
 
 export function HeroProdutoSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const stickyRef = useStickySection()
-  
-  // Track scroll progress of the outer sticky wrapper for precise parallax alignment
+  const prefersReducedMotion = useReducedMotion()
+
   const { scrollYProgress } = useScroll({
     target: stickyRef || containerRef,
-    offset: ['start end', 'end start']
+    offset: ['start end', 'end start'],
   })
-  const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%'])
-
-  const listVariants: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15, delayChildren: 0.4 } }
-  }
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100 } }
-  }
+  const skyY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%'])
+  const canY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ['0%', '0%'] : ['4%', '-4%'])
 
   return (
-    <section aria-labelledby="hero-produto-heading" ref={containerRef} className="relative flex min-h-screen items-center overflow-hidden">
-      
-      {/* Parallax Background */}
-      <motion.div 
-        style={{ y }} 
-        className="absolute inset-[-20%] z-0"
-      >
-        <Image
-          src="/images/lata-montanha.webp"
-          alt="Céu Azul"
-          fill
-          sizes="100vw"
-          className="object-cover object-top"
-          quality={75}
-        />
-        {/* Gradient overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent" />
-      </motion.div>
+    <section
+      aria-labelledby="hero-produto-heading"
+      ref={containerRef}
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-[var(--cream)] px-3 py-4 sm:px-5 md:px-8"
+    >
+      <div aria-hidden="true" className="absolute bottom-0 left-0 h-[30%] w-[25%] rounded-tr-[72px] bg-[#DCEB7D]" />
+      <div aria-hidden="true" className="absolute bottom-0 right-0 h-[30%] w-[22%] rounded-tl-[72px] bg-[#DCEB7D]" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-12 px-6 py-24 md:px-12 lg:flex-row lg:px-24">
-        
-        {/* Left: Text & List */}
-        <div className="flex-1 text-white">
-          <SplitHeadline
-            tag="h2"
-            text="UMA BEBIDA DE PERFORMANCE,\nCOM GOSTO DE VONTADE\nDE TOMAR"
-            className="mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]"
-          />
-
-          <motion.ul
-            variants={listVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="space-y-6 font-body text-xl font-medium md:text-2xl"
+      <div className="relative z-10 mx-auto w-full max-w-[1588px]">
+        <div className="relative h-[calc(100svh-2rem)] min-h-[590px] overflow-hidden rounded-[28px] bg-[#91D5F2] shadow-[0_24px_80px_rgba(74,122,30,0.12)] sm:h-[calc(100svh-3rem)] sm:min-h-[650px] sm:rounded-[34px] lg:min-h-[620px]">
+          <motion.div
+            aria-hidden="true"
+            style={{ y: skyY }}
+            className="absolute inset-[-6%] z-0"
           >
-            {[
-               'Energia sem ritual complicado',
-               'Refrescância de refri, intenção de suplemento',
-               'Zero açúcar, zero peso, zero castigo',
-               'Pra rotina, treino, praia e foco'
-            ].map((text, i) => (
-              <motion.li key={i} variants={itemVariants} className="flex items-center gap-4">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-(--green-volts) text-black">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <span>{text}</span>
-              </motion.li>
-            ))}
-          </motion.ul>
+            <div
+              className="h-full w-full"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle at 12% 66%, rgba(255,255,255,0.92) 0 5%, rgba(255,255,255,0.76) 8%, transparent 18%), radial-gradient(circle at 20% 71%, rgba(255,255,255,0.78) 0 7%, transparent 18%), radial-gradient(circle at 82% 11%, rgba(255,255,255,0.88) 0 8%, transparent 20%), radial-gradient(circle at 91% 15%, rgba(255,255,255,0.72) 0 9%, transparent 21%), linear-gradient(180deg, #55B9EA 0%, #A8DEF5 56%, #E9F8FC 100%)',
+              }}
+            />
+          </motion.div>
+
+          <div aria-hidden="true" className="absolute inset-y-0 right-0 z-0 w-[46%] bg-linear-to-l from-white/35 to-transparent" />
+          <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 z-0 h-[24%] bg-linear-to-t from-white/25 to-transparent" />
+
+          <div className="relative z-10 grid h-full grid-cols-1 content-between gap-4 px-6 py-8 sm:px-10 sm:py-10 md:px-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-10 lg:px-24 lg:py-16 xl:px-32">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-[27rem] pt-2 text-white drop-shadow-[0_8px_24px_rgba(46,119,163,0.18)] sm:pt-6 lg:pt-0"
+            >
+              <h2
+                id="hero-produto-heading"
+                className="font-display text-[2.2rem] font-black uppercase leading-[0.94] text-white sm:text-[3.15rem] md:text-[3.65rem] lg:text-[3.55rem] xl:text-[4.15rem]"
+              >
+                Uma bebida proteica em lata. Leve como um refri, séria como seu treino.
+              </h2>
+
+              <p className="mt-4 max-w-[24rem] font-body text-base font-bold leading-snug text-white/90 sm:text-lg">
+                Beba Volt é a nova geração de bebidas funcionais.
+              </p>
+
+              <p className="mt-8 max-w-[22rem] font-label text-[0.68rem] font-black leading-snug text-white/82 sm:mt-10">
+                E abrir, beber gelada e seguir.
+                <br />
+                Sem pó, sem shaker, sem desculpa.
+              </p>
+            </motion.div>
+
+            <div className="relative min-h-[290px] sm:min-h-[350px] lg:h-[520px] lg:min-h-0">
+              <div className="absolute left-1/2 top-[43%] z-20 w-[150px] -translate-x-1/2 -translate-y-1/2 rotate-[13deg] sm:top-[45%] sm:w-[195px] md:w-[225px] lg:left-[42%] lg:top-1/2 lg:w-[275px] xl:w-[300px]">
+                <motion.div
+                  style={{ y: canY }}
+                  initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.92 }}
+                  whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: '-100px' }}
+                  transition={{ type: 'spring', stiffness: 95, damping: 16, mass: 0.8 }}
+                >
+                  <div aria-hidden="true" className="absolute -inset-8 rounded-full bg-white/20 blur-2xl" />
+                  <Image
+                    src="/images/lata-verde.webp"
+                    alt="Lata Volt sabor abacaxi e hortelã"
+                    width={360}
+                    height={640}
+                    sizes="(max-width: 640px) 150px, (max-width: 1024px) 225px, 300px"
+                    className="relative z-10 h-auto w-full drop-shadow-[0_30px_36px_rgba(57,91,47,0.24)]"
+                    priority
+                  />
+                </motion.div>
+              </div>
+
+              <motion.ul
+                variants={listVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-100px' }}
+                className="absolute bottom-4 left-1/2 z-30 flex w-[min(22rem,100%)] -translate-x-1/2 flex-wrap justify-center gap-2 lg:inset-0 lg:block lg:w-auto lg:translate-x-0"
+                aria-label="Beneficios da bebida"
+              >
+                {featurePills.map((pill) => (
+                  <motion.li
+                    key={pill.label}
+                    variants={itemVariants}
+                    className="rounded-full bg-[var(--cream)] px-4 py-2 text-center font-body text-[0.72rem] font-black leading-tight text-[#647044] shadow-[0_12px_26px_rgba(68,99,41,0.12)] sm:text-xs lg:absolute lg:min-w-[9.25rem] lg:px-5 lg:py-2.5"
+                    style={{ top: pill.top, left: pill.left }}
+                  >
+                    {pill.label}
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </div>
         </div>
 
-        {/* Right: Invisible spacer for layout, since the can is already in the background image */}
-        <div className="flex-1" />
+        <p className="mt-3 text-center font-label text-[0.62rem] font-black text-[#8A9A61]">
+          Sabores que acompanham seu ritmo
+        </p>
       </div>
     </section>
   )

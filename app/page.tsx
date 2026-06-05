@@ -44,9 +44,8 @@ export default function Home() {
             <PropostaSection />
           </StickySection>
 
-          {/* 5. Hero Produto (Parallax Cielo) */}
-          {/* Note: This section handles its own background so bgColor is dark fallback */}
-          <StickySection zIndex={50} bgColor="#1A1A1A" scrollHeight="130vh">
+          {/* 5. Hero Produto */}
+          <StickySection zIndex={50} bgColor="var(--cream)" scrollHeight="130vh">
             <HeroProdutoSection />
           </StickySection>
 

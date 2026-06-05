@@ -36,7 +36,7 @@ export function PropostaSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 mx-auto w-full max-w-[1420px] overflow-hidden rounded-[32px] bg-[#f8f0e8] px-6 py-12 shadow-[0_24px_80px_rgba(36,40,20,0.14)] sm:px-10 sm:py-16 md:rounded-[44px] lg:px-20 lg:py-20 xl:px-28"
+        className="relative z-10 mx-auto w-full max-w-[1420px] overflow-hidden rounded-[32px] bg-[#f8f0e8] px-6 py-12 shadow-[0_24px_80px_rgba(36,40,20,0.14)] sm:px-10 sm:py-16 md:rounded-[44px] lg:px-20 lg:py-20"
       >
         <div className="grid min-h-[640px] items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
           <div className="relative z-20 max-w-[610px]">

@@ -15,7 +15,7 @@ export function SplitHeadline({
   className,
   id,
 }: SplitHeadlineProps) {
-  const lines = text.split('\n')
+  const lines = text.replace(/\\n|\/n/g, '\n').split(/\r?\n/)
 
   return (
     <motion.div
