@@ -228,7 +228,7 @@ export function HeroSection() {
           />
         </svg>
 
-        <div className="mt-10 relative lg:max-w-[50%] z-10 flex flex-col text-center gap-6">
+        <div className="mt-10 lg:mt-0 relative lg:max-w-[40%] lg:h-full z-10 flex flex-col lg:justify-center lg:pl-12 text-center lg:text-left gap-6">
           <h1
             id="hero-heading"
             className="pointer-events-none flex select-none flex-col items-center justify-center text-center font-display text-[5rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 lg:left-0 lg:translate-x-0 lg:items-start lg:text-left lg:text-[9rem] xl:text-[10.4rem]"
@@ -239,13 +239,13 @@ export function HeroSection() {
             <p className="text-white  font-display text-xl font-black uppercase leading-[1.04] md:text-[2rem] lg:text-[2.35rem]">
               A energia em lata que vive no mesmo ritmo que você
             </p>
-            <p className="mx-auto max-w-[18rem] text-sm  font-bold leading-snug text-white/86">
+            <p className="mx-auto lg:mx-0 max-w-[18rem] text-sm  font-bold leading-snug text-white/86">
               30mg de cafeína, zero açúcar e sabores refrescantes.
             </p>
             <button
               type="button"
               onClick={() => window.open('https://wa.me/5511967173625', '_blank', 'noopener,noreferrer')}
-              className="group mx-6 rounded-md bg-white px-6 py-3 text-[#415435] shadow-[0_18px_40px_rgba(42,56,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-0"
+              className="group mx-6 lg:mx-0 lg:w-md rounded-md bg-white px-6 py-3 text-[#415435] shadow-[0_18px_40px_rgba(42,56,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-0"
               aria-label="Conversar com a VOLT pelo WhatsApp"
             >
               <span className="font-label text-[9px] font-black tracking-[0.12em] transition-colors sm:text-[10px]">
@@ -256,7 +256,7 @@ export function HeroSection() {
             PRIMEIRO LOTE - CONDIÇÕES ESPECIAIS DE LANÇAMENTO
           </span>
         </div>
-        <div className="absolute left-1/2 -bottom-50 z-30 -translate-x-1/2 -translate-y-1/2 rotate-12 transform scale-[0.78] md:left-[56%] md:top-[55%] md:scale-[1.05] lg:left-[56.5%] lg:top-[55%] lg:scale-[1.22]">
+        <div className="absolute left-1/2 -bottom-50 z-30 -translate-x-1/2 -translate-y-1/2 rotate-12 transform scale-[0.78] md:left-[56%] md:top-[55%] md:scale-[1.05] lg:left-[70%] lg:top-[55%] lg:scale-[1.22]">
           <h1
           className="-rotate-12 opacity-20 pointer-events-none absolute left-1/2 top-[5%] z-10 flex -translate-x-1/2 select-none flex-col items-center justify-center text-center font-display text-[10rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 md:left-[48%] md:top-[13%] md:text-[7.6rem] lg:text-[9rem] xl:text-[10.4rem]"
         >
@@ -303,10 +303,6 @@ export function HeroSection() {
           <Hotspot x="44%" y="17%" label="+" tooltip="30mg de cafeína para foco estendido e energia limpa." />
           <Hotspot x="68%" y="43%" label="x" tooltip="Taurina + blend de vitaminas e minerais para energia funcional." />
           <Hotspot x="23%" y="76%" label="+" tooltip="Sabor gelado, leve e sem açúcar para acompanhar sua rotina." />
-        </div>
-
-        <div className="absolute right-[12%] top-[45%] z-30 hidden w-[255px] rounded-[20px] border border-white/35 bg-white/10 px-6 py-5 text-sm font-medium leading-snug text-white shadow-[0_24px_80px_rgba(32,44,22,0.18)] backdrop-blur-md lg:block">
-          30mg de cafeína + blend de vitaminas e minerais
         </div>
 
         <div className="absolute bottom-[15%] right-[18%] z-20 hidden text-left text-xs leading-snug text-white/78 lg:block">
