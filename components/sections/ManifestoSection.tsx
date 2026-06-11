@@ -42,7 +42,7 @@ export function ManifestoSection() {
           {/* Premium Image Card */}
           <motion.div
             variants={fadeUp}
-            className="relative z-10 h-[280px] w-[280px] overflow-hidden rounded-[36px] border-4 border-white/20 bg-[#C5D8B0] shadow-2xl sm:h-[400px] sm:w-[400px] sm:rounded-[48px] lg:h-[460px] lg:w-[460px]"
+            className="relative z-10 h-[400px] w-[400px] overflow-hidden rounded-[36px] border-4 border-white/20 bg-[#C5D8B0] shadow-2xl sm:h-[400px] sm:w-[400px] sm:rounded-[48px] lg:h-[460px] lg:w-[460px]"
           >
             <Image
               src="/images/latas-empilhadas.webp"

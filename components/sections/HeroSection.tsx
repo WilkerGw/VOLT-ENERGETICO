@@ -171,14 +171,24 @@ export function HeroSection() {
     })
   }, [])
 
+  useEffect(() => {
+    if (typeof window === 'undefined' || prefersReducedMotion) return
+
+    const interval = window.setInterval(() => {
+      setActiveCanIndex((current) => (current + 1) % heroCans.length)
+    }, 3400)
+
+    return () => window.clearInterval(interval)
+  }, [prefersReducedMotion])
+
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-[var(--cream)] px-3 py-5 sm:px-5 md:px-8"
+      className="relative flex w-full overflow-hidden px-3 py-5 sm:px-5"
     >
       <div
         ref={containerRef}
-        className="relative z-10 h-[calc(100svh-2.5rem)] min-h-[640px] w-full max-w-[1588px] overflow-visible rounded-[22px] md:min-h-[660px] lg:max-h-[860px]"
+        className="relative z-10 h-[calc(100svh-2.5rem)] min-h-[640px] w-full max-w-[1588px] overflow-visible rounded-[22px]"
       >
         <div className="pointer-events-none absolute inset-0 z-0 h-full w-full">
           <svg className="h-full w-full" width={dims.width} height={dims.height}>
@@ -192,14 +202,11 @@ export function HeroSection() {
             <path
               d={getNotchedPath(dims.width, dims.height)}
               fill="url(#heroWaveGradient)"
-              stroke="#6A7E50"
-              strokeLinejoin="round"
-              strokeWidth="4"
             />
           </svg>
         </div>
 
-        <div className="pointer-events-none absolute left-1/2 top-[5px] z-30 -translate-x-1/2 select-none font-display text-3xl font-black leading-none text-[#73875B] sm:text-4xl">
+        <div className="pointer-events-none absolute left-1/2 -top-2 lg:top-0 z-30 -translate-x-1/2 select-none font-display text-2xl lg:text-5xl font-black leading-none text-[#73875B]">
           Volt
         </div>
 
@@ -221,61 +228,42 @@ export function HeroSection() {
           />
         </svg>
 
-        <h1
-          id="hero-heading"
-          className="pointer-events-none absolute left-1/2 top-[10%] z-10 flex -translate-x-1/2 select-none flex-col items-center justify-center text-center font-display text-[4.3rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 sm:flex-row sm:gap-5 sm:whitespace-nowrap sm:text-[6rem] md:left-[48%] md:top-[13%] md:text-[7.6rem] lg:text-[9rem] xl:text-[10.4rem]"
-        >
-          <span>BEBA</span>
-          <span>VOLT</span>
-        </h1>
-
-        <button
-          type="button"
-          onClick={showPreviousCan}
-          className="absolute left-[2px] top-1/2 z-40 hidden h-12 w-10 -translate-y-1/2 items-center justify-center rounded-full text-[#63764B] transition-all hover:scale-105 hover:text-[#243817] active:scale-95 md:flex"
-          aria-label="Sabor anterior"
-        >
-          <ChevronLeft className="h-5 w-5 stroke-[2.5]" />
-        </button>
-
-        <button
-          type="button"
-          onClick={showNextCan}
-          className="absolute right-[2px] top-1/2 z-40 hidden h-12 w-10 -translate-y-1/2 items-center justify-center rounded-full text-[#63764B] transition-all hover:scale-105 hover:text-[#243817] active:scale-95 md:flex"
-          aria-label="Próximo sabor"
-        >
-          <ChevronRight className="h-5 w-5 stroke-[2.5]" />
-        </button>
-
-        <button
-          type="button"
-          className="absolute bottom-[4px] left-1/2 z-40 hidden h-8 w-12 -translate-x-1/2 items-center justify-center rounded-full text-[#425935] transition-all hover:translate-y-0.5 hover:scale-105 active:scale-95 md:flex"
-          aria-label="Rolar para baixo"
-        >
-          <ChevronDown className="h-5 w-5 stroke-[2.5]" />
-        </button>
-
-        <div className="absolute left-1/2 top-[30%] z-20 flex w-[min(20rem,76vw)] -translate-x-1/2 flex-col items-center text-center text-white md:left-[18%] md:top-[31%] md:translate-x-0 md:items-start md:text-left lg:left-[17.6%] lg:w-[24rem]">
-          <p className="font-display text-2xl font-black uppercase leading-[1.04] sm:text-3xl md:text-[2rem] lg:text-[2.35rem]">
-            A energia em lata que vive no mesmo ritmo que você
-          </p>
-          <p className="mt-3 max-w-[18rem] text-sm font-bold leading-snug text-white/86">
-            30mg de cafeína, zero açúcar e sabores refrescantes.
-          </p>
-          <button
-            type="button"
-            className="group mt-6 rounded-[12px] bg-white px-6 py-3 text-[#415435] shadow-[0_18px_40px_rgba(42,56,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-0 sm:px-7"
+        <div className="mt-10 relative lg:max-w-[50%] z-10 flex flex-col text-center gap-6">
+          <h1
+            id="hero-heading"
+            className="pointer-events-none flex select-none flex-col items-center justify-center text-center font-display text-[5rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 lg:left-0 lg:translate-x-0 lg:items-start lg:text-left lg:text-[9rem] xl:text-[10.4rem]"
           >
-            <span className="font-label text-[9px] font-black tracking-[0.12em] transition-colors sm:text-[10px]">
-              ENCONTRAR MINHA VOLT IDEAL
-            </span>
-          </button>
+            <span>BEBA</span>
+            <span>VOLT</span>
+          </h1>
+            <p className="text-white  font-display text-xl font-black uppercase leading-[1.04] md:text-[2rem] lg:text-[2.35rem]">
+              A energia em lata que vive no mesmo ritmo que você
+            </p>
+            <p className="mx-auto max-w-[18rem] text-sm  font-bold leading-snug text-white/86">
+              30mg de cafeína, zero açúcar e sabores refrescantes.
+            </p>
+            <button
+              type="button"
+              onClick={() => window.open('https://wa.me/5511967173625', '_blank', 'noopener,noreferrer')}
+              className="group mx-6 rounded-md bg-white px-6 py-3 text-[#415435] shadow-[0_18px_40px_rgba(42,56,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-0"
+              aria-label="Conversar com a VOLT pelo WhatsApp"
+            >
+              <span className="font-label text-[9px] font-black tracking-[0.12em] transition-colors sm:text-[10px]">
+                ENCONTRAR MINHA VOLT IDEAL
+              </span>
+            </button>
           <span className="mt-3 hidden font-label text-[7px] font-black uppercase tracking-[0.14em] text-white/55 sm:block">
             PRIMEIRO LOTE - CONDIÇÕES ESPECIAIS DE LANÇAMENTO
           </span>
         </div>
-
-        <div className="absolute left-1/2 top-[70%] z-30 -translate-x-1/2 -translate-y-1/2 rotate-12 scale-[0.68] transform sm:top-[68%] sm:scale-[0.78] md:left-[56%] md:top-[55%] md:scale-[1.05] lg:left-[56.5%] lg:top-[55%] lg:scale-[1.22] xl:scale-[1.34]">
+        <div className="absolute left-1/2 -bottom-50 z-30 -translate-x-1/2 -translate-y-1/2 rotate-12 transform scale-[0.78] md:left-[56%] md:top-[55%] md:scale-[1.05] lg:left-[56.5%] lg:top-[55%] lg:scale-[1.22]">
+          <h1
+          className="-rotate-12 opacity-20 pointer-events-none absolute left-1/2 top-[5%] z-10 flex -translate-x-1/2 select-none flex-col items-center justify-center text-center font-display text-[10rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 md:left-[48%] md:top-[13%] md:text-[7.6rem] lg:text-[9rem] xl:text-[10.4rem]"
+        >
+          <span>BEBA</span>
+          <span>VOLT</span>
+          </h1>
+          
           <motion.div
             aria-hidden="true"
             animate={{
