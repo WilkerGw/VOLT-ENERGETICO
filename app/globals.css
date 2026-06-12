@@ -117,9 +117,9 @@ html {
   background-color: var(--sticky-bg);
   border-radius: var(--sticky-radius);
   box-shadow: var(--sticky-shadow);
-  contain: paint;
+  contain: layout style;
   min-height: var(--sticky-min-height);
-  overflow: clip;
+  overflow: visible;
   position: sticky;
   top: 0;
   transform: translateZ(0);
@@ -142,7 +142,7 @@ html {
   z-index: 2;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .sticky-scene {
     height: auto !important;
     min-height: 100svh;
@@ -152,7 +152,7 @@ html {
     border-radius: var(--sticky-mobile-radius);
     box-shadow: var(--sticky-mobile-shadow);
     min-height: 100svh;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
   }
 }

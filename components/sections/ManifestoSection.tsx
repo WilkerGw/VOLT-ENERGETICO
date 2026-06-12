@@ -8,7 +8,7 @@ export function ManifestoSection() {
   return (
     <section
       aria-labelledby="manifesto-heading"
-      className="relative w-full min-h-screen flex items-center justify-center py-16 px-6 sm:px-12 lg:px-24 overflow-hidden bg-[var(--cream)]"
+      className="relative w-full min-h-screen flex items-center justify-center py-16 px-6 lg:px-24 overflow-hidden bg-[var(--cream)]"
     >
 
       {/* Background Organic Wave Shape */}
@@ -74,12 +74,12 @@ export function ManifestoSection() {
         </div>
 
         {/* Right Column: Editorial Text Content */}
-        <div className="flex-grow flex flex-col items-start text-left max-w-xl lg:w-1/2 z-20">
+        <div className="z-20 flex max-w-xl flex-grow flex-col items-center text-center lg:w-1/2 lg:items-start lg:text-left">
 
           {/* Top Tag */}
           <motion.div
             variants={fadeUp}
-            className="mb-6 inline-block font-label text-[11px] text-[var(--olive)] font-black tracking-widest uppercase select-none"
+            className="inline-block font-label text-[11px] text-[var(--olive)] font-black tracking-widest uppercase select-none"
           >
             Saúde que nasce do prazer, não da culpa
           </motion.div>
@@ -91,26 +91,16 @@ export function ManifestoSection() {
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={staggerContainer}
-            className="mb-10 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
+            className="my-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
           >
             <span style={{ display: 'block', overflow: 'hidden' }}>
               <motion.span style={{ display: 'block' }} variants={lineReveal}>
-                você já percebeu que quase
+                Tudo que é <span className="text-[var(--olive)] font-black">&quot;saudável&quot;</span>
               </motion.span>
             </span>
             <span style={{ display: 'block', overflow: 'hidden' }}>
               <motion.span style={{ display: 'block' }} variants={lineReveal}>
-                tudo que é <span className="text-[var(--olive)] font-black">&quot;saudável&quot;</span> vem
-              </motion.span>
-            </span>
-            <span style={{ display: 'block', overflow: 'hidden' }}>
-              <motion.span style={{ display: 'block' }} variants={lineReveal}>
-                embalado em culpa, restrição
-              </motion.span>
-            </span>
-            <span style={{ display: 'block', overflow: 'hidden' }}>
-              <motion.span style={{ display: 'block' }} variants={lineReveal}>
-                e cara de castigo?
+               vem embalado em culpa e restrição.
               </motion.span>
             </span>
           </motion.h2>
@@ -118,14 +108,13 @@ export function ManifestoSection() {
           {/* Body Copy matching the mockup copy */}
           <motion.div
             variants={fadeUp}
-            className="space-y-5 font-body text-base md:text-[1.05rem] font-normal text-black/75 leading-snug"
+            className="space-y-3 font-body text-base font-normal leading-snug text-black/75 md:text-[1.05rem]"
           >
-            <p className="font-semibold text-black text-lg">A VOLT nasceu pra quebrar isso.</p>
+            <p className="font-semibold text-black text-lg">A Volt nasceu pra quebrar isso.</p>
             <p>Não é sobre contar calorias o tempo todo.</p>
             <p>É sobre viver mais, melhor – com energia, presença e prazer e deixar a saúde ser a consequência natural dessa rotina.</p>
             <p>A cada lata, uma escolha simples:</p>
-            <p className="font-medium text-black flex items-start gap-2.5">
-              <span className="shrink-0 text-lg">👉</span>
+            <p className="flex items-start justify-center gap-2.5 font-medium text-black lg:justify-start">
               <span>trocar o refri, o whey, a água com gás por algo que te faz bem por dentro e por fora.</span>
             </p>
           </motion.div>

@@ -65,7 +65,7 @@ export default function Home() {
           </StickySection>
 
           {/* 9. UGC (Vida Real) */}
-          <StickySection zIndex={90} bgColor="var(--cream)" scrollHeight="150vh">
+          <StickySection zIndex={90} bgColor="var(--cream)" scrollHeight="180vh">
             <UGCSection />
           </StickySection>
 

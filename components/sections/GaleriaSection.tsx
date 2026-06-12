@@ -47,8 +47,8 @@ export function GaleriaSection() {
       <AnimatedSection className="relative z-10 mx-auto max-w-7xl">
 
         {/* Header Block with Reading Mascot */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto mb-4 relative">
-          <div className="flex flex-col items-center text-center">
+        <div className="relative mx-auto mb-4 flex max-w-5xl flex-col items-center justify-center gap-8 md:flex-row md:gap-12 lg:mx-0 lg:justify-start">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
 
             {/* Top Tag */}
             <motion.div
@@ -61,7 +61,7 @@ export function GaleriaSection() {
             {/* Main Title */}
             <motion.h2
               id="galeria-heading"
-              className="font-display text-2xl sm:text-5xl md:text-[2.6rem] leading-[0.94] text-black font-extrabold max-w-2xl"
+              className="max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
               variants={fadeUp}
             >
               SINTA O QUE TE ELEVA, A
@@ -70,7 +70,7 @@ export function GaleriaSection() {
 
             {/* Subtitle */}
             <motion.p
-              className="mt-4 font-body text-sm sm:text-base text-black/60 max-w-md leading-snug"
+              className="mt-4 max-w-md font-body text-sm leading-snug text-black/60 sm:text-base"
               variants={fadeUp}
             >
               Se você quer um corpo forte, uma mente leve e uma rotina

@@ -52,7 +52,7 @@ export function SaboresSection() {
 
   return (
     <div aria-label="section" id="sabores" className="flex min-h-screen flex-col justify-center px-4 py-24 md:px-12 lg:px-24">
-      <div className="mx-auto mb-20 flex w-full max-w-7xl flex-col items-center text-center">
+      <div className="mx-auto mb-20 flex w-full max-w-7xl flex-col items-center text-center lg:items-start lg:text-left">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,14 +65,14 @@ export function SaboresSection() {
         <SplitHeadline
           tag="h2"
           text="SABORES QUE NÃO PARECEM\nUMA OBRIGAÇÃO SAUDÁVEL"
-          className="mx-auto max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
+          className="mx-auto max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
         />
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.25 }}
-          className="mt-5 max-w-xl font-body text-sm leading-snug text-black/60 sm:text-base"
+          className="mx-auto mt-5 max-w-xl font-body text-sm leading-snug text-black/60 sm:text-base lg:mx-0"
         >
           Do cítrico ao doce intenso, cada lata foi pensada para dar vontade do próximo gole.
         </motion.p>

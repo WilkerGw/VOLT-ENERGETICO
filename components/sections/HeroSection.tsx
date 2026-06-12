@@ -1,7 +1,6 @@
 'use client'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useState, useEffect, useId, useRef } from 'react'
-import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react'
 import { FloatingCan } from '../ui/FloatingCan'
 
 interface HotspotProps {
@@ -137,14 +136,6 @@ export function HeroSection() {
   const prefersReducedMotion = useReducedMotion()
   const activeCan = heroCans[activeCanIndex]
 
-  const showPreviousCan = () => {
-    setActiveCanIndex((current) => (current - 1 + heroCans.length) % heroCans.length)
-  }
-
-  const showNextCan = () => {
-    setActiveCanIndex((current) => (current + 1) % heroCans.length)
-  }
-
   useEffect(() => {
     if (typeof window === 'undefined') return
     const el = containerRef.current
@@ -184,11 +175,11 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex w-full overflow-hidden px-3 py-5 sm:px-5"
+      className="relative flex w-full overflow-hidden px-3 py-5"
     >
       <div
         ref={containerRef}
-        className="relative z-10 h-[calc(100svh-2.5rem)] min-h-[640px] w-full max-w-[1588px] overflow-visible rounded-[22px]"
+        className="relative z-10 h-[calc(100svh-2.5rem)] min-h-[640px] w-full max-w-[1588px] overflow-visible rounded-[22px] md:min-h-[650px] lg:min-h-[640px]"
       >
         <div className="pointer-events-none absolute inset-0 z-0 h-full w-full">
           <svg className="h-full w-full" width={dims.width} height={dims.height}>
@@ -210,7 +201,7 @@ export function HeroSection() {
           Volt
         </div>
 
-        <p className="pointer-events-none absolute right-[27%] top-[12%] z-20 hidden max-w-[340px] text-[6px] font-bold uppercase tracking-[0.22em] text-white/35 lg:block">
+        <p className="pointer-events-none absolute right-[27%] top-[12%] z-50 hidden max-w-[340px] text-[6px] font-bold uppercase tracking-[0.22em] text-white/35 lg:block">
           A nova rotina pede energia funcional, sabor refrescante e ritmo leve.
         </p>
 
@@ -228,42 +219,41 @@ export function HeroSection() {
           />
         </svg>
 
-        <div className="mt-10 lg:mt-0 relative lg:max-w-[40%] lg:h-full z-10 flex flex-col lg:justify-center lg:pl-12 text-center lg:text-left gap-6">
+        <div className="relative z-40 mt-10 flex flex-col gap-5 px-4 text-center md:mt-0 md:h-full md:max-w-[43%] md:justify-center md:px-0 md:pl-10 md:text-left lg:max-w-[40%] lg:pl-12">
           <h1
             id="hero-heading"
-            className="pointer-events-none flex select-none flex-col items-center justify-center text-center font-display text-[5rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 lg:left-0 lg:translate-x-0 lg:items-start lg:text-left lg:text-[9rem] xl:text-[10.4rem]"
+            className="pointer-events-none flex select-none flex-col items-center justify-center text-center font-display text-[clamp(4.25rem,13vw,5rem)] font-black uppercase leading-[0.82] text-[#DCEB91]/78 md:items-start md:text-left md:text-[5rem] lg:left-0 lg:translate-x-0 lg:text-[9rem]"
           >
             <span>BEBA</span>
             <span>VOLT</span>
           </h1>
-            <p className="text-white  font-display text-xl font-black uppercase leading-[1.04] md:text-[2rem] lg:text-[2.35rem]">
+            <p className="text-white  font-display text-xl font-black uppercase leading-[1.04] md:text-[1.65rem] lg:text-[2rem]">
               A energia em lata que vive no mesmo ritmo que você
             </p>
-            <p className="mx-auto lg:mx-0 max-w-[18rem] text-sm  font-bold leading-snug text-white/86">
+            <p className="mx-auto max-w-[18rem] text-sm  font-bold leading-snug text-white/86 md:mx-0">
               30mg de cafeína, zero açúcar e sabores refrescantes.
             </p>
             <button
               type="button"
               onClick={() => window.open('https://wa.me/5511967173625', '_blank', 'noopener,noreferrer')}
-              className="group mx-6 lg:mx-0 lg:w-md rounded-md bg-white px-6 py-3 text-[#415435] shadow-[0_18px_40px_rgba(42,56,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-0"
+              className="group relative z-50 mx-2 rounded-md bg-white px-6 py-3 text-[#415435] shadow-[0_18px_40px_rgba(42,56,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-0 sm:mx-auto md:mx-0 md:w-[min(100%,24rem)] lg:w-md"
               aria-label="Conversar com a VOLT pelo WhatsApp"
             >
               <span className="font-label text-[9px] font-black tracking-[0.12em] transition-colors sm:text-[10px]">
                 ENCONTRAR MINHA VOLT IDEAL
               </span>
             </button>
-          <span className="mt-3 hidden font-label text-[7px] font-black uppercase tracking-[0.14em] text-white/55 sm:block">
+          <span className="text-[.7rem] font-black uppercase  text-white/55 md:block">
             PRIMEIRO LOTE - CONDIÇÕES ESPECIAIS DE LANÇAMENTO
           </span>
         </div>
-        <div className="absolute left-1/2 -bottom-50 z-30 -translate-x-1/2 -translate-y-1/2 rotate-12 transform scale-[0.78] md:left-[56%] md:top-[55%] md:scale-[1.05] lg:left-[70%] lg:top-[55%] lg:scale-[1.22]">
+        <div className="absolute left-1/2 -bottom-45 z-20 -translate-x-1/2 -translate-y-1/2 rotate-12 transform scale-[0.74] md:bottom-auto md:left-[70%] md:top-[58%] md:scale-[0.92] lg:left-[70%] lg:top-[55%] lg:scale-[1.22]">
           <h1
           className="-rotate-12 opacity-20 pointer-events-none absolute left-1/2 top-[5%] z-10 flex -translate-x-1/2 select-none flex-col items-center justify-center text-center font-display text-[10rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 md:left-[48%] md:top-[13%] md:text-[7.6rem] lg:text-[9rem] xl:text-[10.4rem]"
         >
           <span>BEBA</span>
           <span>VOLT</span>
           </h1>
-          
           <motion.div
             aria-hidden="true"
             animate={{
@@ -305,12 +295,12 @@ export function HeroSection() {
           <Hotspot x="23%" y="76%" label="+" tooltip="Sabor gelado, leve e sem açúcar para acompanhar sua rotina." />
         </div>
 
-        <div className="absolute bottom-[15%] right-[18%] z-20 hidden text-left text-xs leading-snug text-white/78 lg:block">
+        <div className="absolute bottom-[15%] right-[18%] z-50 hidden text-left text-xs leading-snug text-white/78 lg:block">
           <p className="border-l border-white/45 pl-4 font-black text-white">+ Mais que uma bebida</p>
           <p className="pl-4 text-white/72">Sua vitalidade em forma de lata.</p>
         </div>
 
-        <div className="pointer-events-none absolute right-[17%] top-[17%] z-20 hidden h-24 w-24 select-none lg:block" style={{ animation: 'spin 12s linear infinite' }}>
+        <div className="pointer-events-none absolute bottom-10 right-10 lg:right-[17%] lg:top-[17%] z-50 h-24 w-24 select-none lg:block" style={{ animation: 'spin 12s linear infinite' }}>
           <svg className="h-full w-full" viewBox="0 0 100 100">
             <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
             <text className="font-label text-[6px] fill-white/70 font-black tracking-widest">

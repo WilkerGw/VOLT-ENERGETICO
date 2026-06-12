@@ -73,7 +73,7 @@ export function HeroProdutoSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="max-w-[27rem] pt-2 text-white drop-shadow-[0_8px_24px_rgba(46,119,163,0.18)] sm:pt-6 lg:pt-0"
+              className="mx-auto max-w-[27rem] pt-2 text-center text-white drop-shadow-[0_8px_24px_rgba(46,119,163,0.18)] sm:pt-6 lg:mx-0 lg:pt-0 lg:text-left"
             >
               <h2
                 id="hero-produto-heading"
@@ -82,11 +82,11 @@ export function HeroProdutoSection() {
                 Uma bebida proteica em lata. Leve como um refri, séria como seu treino.
               </h2>
 
-              <p className="mt-4 max-w-[24rem] font-body text-base font-bold leading-snug text-white/90 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-[24rem] font-body text-base font-bold leading-snug text-white/90 sm:text-lg lg:mx-0">
                 Beba Volt é a nova geração de bebidas funcionais.
               </p>
 
-              <p className="mt-8 max-w-[22rem] font-label text-[0.68rem] font-black leading-snug text-white/82 sm:mt-10">
+              <p className="mx-auto mt-8 max-w-[22rem] font-label text-[0.68rem] font-black leading-snug text-white/82 sm:mt-10 lg:mx-0">
                 E abrir, beber gelada e seguir.
                 <br />
                 Sem pó, sem shaker, sem desculpa.
@@ -138,7 +138,7 @@ export function HeroProdutoSection() {
           </div>
         </div>
 
-        <p className="mt-3 text-center font-label text-[0.62rem] font-black text-[#8A9A61]">
+        <p className="mt-3 text-center font-label text-[0.62rem] font-black text-[#8A9A61] lg:text-left">
           Sabores que acompanham seu ritmo
         </p>
       </div>

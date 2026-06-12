@@ -39,7 +39,7 @@ export function PropostaSection() {
         className="relative z-10 mx-auto w-full max-w-[1420px] overflow-hidden rounded-[32px] bg-[#f8f0e8] px-6 py-12 shadow-[0_24px_80px_rgba(36,40,20,0.14)] sm:px-10 sm:py-16 md:rounded-[44px] lg:px-20 lg:py-20"
       >
         <div className="grid min-h-[640px] items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
-          <div className="relative z-20 max-w-[610px]">
+          <div className="relative z-20 mx-auto max-w-[610px] text-center lg:mx-0 lg:text-left">
             <motion.h2
               id="proposta-heading"
               initial={{ opacity: 0, y: 28 }}
@@ -66,7 +66,7 @@ export function PropostaSection() {
                 {marketOptions.map((option) => (
                   <div
                     key={option}
-                    className="w-fit max-w-full rounded-md border border-[#6b6258]/45 bg-[#fffaf2]/40 px-3 py-2 text-sm font-bold leading-snug text-[#5a524a] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] sm:text-base"
+                    className="mx-auto w-fit max-w-full rounded-md border border-[#6b6258]/45 bg-[#fffaf2]/40 px-3 py-2 text-sm font-bold leading-snug text-[#5a524a] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] sm:text-base lg:mx-0"
                   >
                     {option}
                   </div>
