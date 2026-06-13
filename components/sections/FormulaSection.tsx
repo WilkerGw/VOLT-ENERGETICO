@@ -6,9 +6,9 @@ import Image from 'next/image'
 
 export function FormulaSection() {
   const attributes = [
-    { value: 30, label: 'Cafeína (mg)' },
-    { value: 1000, label: 'Taurina (mg)' },
-    { value: 100, label: 'CoQ10 (mg)' },
+    { value: 30, label: 'Cafeína' },
+    { value: 1000, label: 'Taurina' },
+    { value: 100, label: 'CoQ10' },
     { value: 0, label: 'Açúcar' },
     { value: 0, label: 'Calorias' },
   ]
@@ -62,12 +62,12 @@ export function FormulaSection() {
               key={i}
               variants={circleVariants}
               whileHover={{ scale: 1.05 }}
-              className="group flex h-28 w-28 flex-col items-center justify-center rounded-full border border-black/5 bg-white shadow-xl transition-shadow hover:shadow-2xl sm:h-36 sm:w-36 md:h-48 md:w-48"
+              className="group flex h-28 lg:h-25 w-28 lg:w-25 flex-col items-center justify-center rounded-full border border-black/5 bg-white shadow-xl transition-shadow hover:shadow-2xl md:h-48 md:w-48"
             >
-              <span className="font-display text-2xl text-(--green-volts) sm:text-3xl md:text-4xl">
+              <span className="font-display text-2xl lg:text-[1.5rem] text-(--green-volts) md:text-4xl">
                 <CountUp end={attr.value} />
               </span>
-              <span className="mt-2 text-center font-label text-[10px] font-bold text-black/50 group-hover:text-black sm:text-xs">
+              <span className="mt-2 text-center font-label text-[10px] font-bold text-black/50 group-hover:text-black">
                 {attr.label}
               </span>
             </motion.div>

@@ -22,7 +22,7 @@ export function UGCSection() {
   return (
     <div className="min-h-screen px-4 py-24 md:px-12 lg:px-24">
       <AnimatedSection className="mx-auto max-w-7xl">
-        <div className="mb-20 text-center lg:text-left">
+        <div className="mb-20 lg:mb-2 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export function UGCSection() {
         </div>
 
         {/* 3-Column Masonry UGC Grid */}
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:gap-8 lg:w-[80%] mx-auto">
           
           {/* Column 1 - Medium Parallax */}
           <ParallaxLayer speed={0.1} className="flex flex-col gap-4 md:gap-6 lg:gap-8">

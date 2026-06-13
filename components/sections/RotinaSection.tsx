@@ -36,7 +36,7 @@ export function RotinaSection() {
           variants={slideLeft}
           className="relative w-full flex-1 lg:h-[700px]"
         >
-          <div className="relative h-96 w-full overflow-hidden rounded-3xl lg:h-full lg:w-[90%]">
+          <div className="relative h-96 w-full overflow-hidden rounded-3xl lg:h-[80%] lg:w-[80%]">
             <Image
               src="/images/lata-academia.webp"
               alt="VOLT na rotina"
@@ -59,7 +59,7 @@ export function RotinaSection() {
           <SplitHeadline
             tag="h2"
             text="A VOLT ENTRA ONDE\nSUA ENERGIA COSTUMA CAIR"
-            className="mx-auto mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
+            className="mx-auto mb-12 max-w-2xl font-display text-2xl lg:text-[2.3rem] font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
           />
 
           <motion.ul
@@ -73,12 +73,12 @@ export function RotinaSection() {
               <motion.li
                 key={i}
                 variants={itemVariants}
-                className="flex items-center gap-6 rounded-2xl border border-white/10 bg-white/5 p-4 transition-colors hover:bg-white/10"
+                className="flex items-center gap-6 rounded-2xl border border-white/10 bg-white/5 p-2 transition-colors hover:bg-white/10"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-2xl shadow-inner">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-2xl shadow-inner">
                   {item.icon}
                 </div>
-                <span className="font-light">{item.text}</span>
+                <span className="font-light md:text-lg">{item.text}</span>
               </motion.li>
             ))}
           </motion.ul>

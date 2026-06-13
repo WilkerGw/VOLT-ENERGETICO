@@ -2,14 +2,114 @@
 import { motion } from 'framer-motion'
 import { SplitHeadline } from '../ui/SplitHeadline'
 import { staggerContainer, fadeUp } from '@/lib/variants'
-import { MapPin, ShoppingCart, Package, Bike, Handshake } from 'lucide-react'
+import { MapPin } from 'lucide-react'
+
+function VoltOfficialLogo() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 92 34" className="h-8 w-[5.4rem]">
+      <rect width="92" height="34" rx="17" fill="#F5F0E8" />
+      <text
+        x="13"
+        y="23"
+        fill="#1A1A1A"
+        fontFamily="var(--font-display)"
+        fontSize="21"
+        fontWeight="900"
+      >
+        Volt
+      </text>
+      <circle cx="75" cy="17" r="7" fill="#7DB33A" />
+      <path d="M72.5 17h5" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function AmazonLogo() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 104 34" className="h-8 w-[6.1rem]">
+      <text
+        x="5"
+        y="22"
+        fill="#111111"
+        fontFamily="Arial, Helvetica, sans-serif"
+        fontSize="22"
+        fontWeight="700"
+      >
+        amazon
+      </text>
+      <path
+        d="M28 27c15 7 37 5 54-5"
+        fill="none"
+        stroke="#FF9900"
+        strokeLinecap="round"
+        strokeWidth="3"
+      />
+      <path
+        d="M78 22l7-.6-2.8 6.4"
+        fill="none"
+        stroke="#FF9900"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="3"
+      />
+    </svg>
+  )
+}
+
+function IFoodLogo() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 82 34" className="h-8 w-[4.9rem]">
+      <text
+        x="4"
+        y="24"
+        fill="#EA1D2C"
+        fontFamily="Arial, Helvetica, sans-serif"
+        fontSize="26"
+        fontWeight="900"
+      >
+        iFood
+      </text>
+    </svg>
+  )
+}
+
+function MercadoLivreLogo() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 78 34" className="h-8 w-[4.6rem]">
+      <rect x="2" y="4" width="74" height="26" rx="13" fill="#FFE600" />
+      <path
+        d="M18 17c4.6-4.4 9.4-4.4 14 0 4.6-4.4 9.4-4.4 14 0"
+        fill="none"
+        stroke="#2D5DA8"
+        strokeLinecap="round"
+        strokeWidth="2.8"
+      />
+      <path
+        d="M24 17l7 5.5c1.8 1.4 4.4 1.4 6.2 0L44 17"
+        fill="none"
+        stroke="#2D5DA8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.8"
+      />
+      <path
+        d="M31.5 18.4l3.3 2.7 4.1-3.2"
+        fill="none"
+        stroke="#2D5DA8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.4"
+      />
+    </svg>
+  )
+}
 
 export function OndeEncontrarSection() {
   const partners = [
-    { name: 'Loja Oficial', icon: <ShoppingCart className="h-6 w-6 text-(--green-volts)" /> },
-    { name: 'Amazon', icon: <Package className="h-6 w-6 text-(--green-volts)" /> },
-    { name: 'iFood', icon: <Bike className="h-6 w-6 text-(--green-volts)" /> },
-    { name: 'Mercado Livre', icon: <Handshake className="h-6 w-6 text-(--green-volts)" /> },
+    { name: 'Loja Oficial', logo: <VoltOfficialLogo /> },
+    { name: 'Amazon', logo: <AmazonLogo /> },
+    { name: 'iFood', logo: <IFoodLogo /> },
+    { name: 'Mercado Livre', logo: <MercadoLivreLogo /> },
   ]
 
   return (
@@ -45,9 +145,11 @@ export function OndeEncontrarSection() {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="flex items-center gap-3 rounded-2xl bg-white/10 px-6 py-4 backdrop-blur-sm transition-colors hover:bg-white/20"
+              className="flex items-center gap-4 rounded-2xl bg-white/10 px-5 py-4 backdrop-blur-sm transition-colors hover:bg-white/20 sm:px-6"
             >
-              <span className="flex h-10 w-10 items-center justify-center">{partner.icon}</span>
+              <span className="flex h-12 min-w-[5.8rem] items-center justify-center rounded-xl bg-white px-3 shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
+                {partner.logo}
+              </span>
               <span className="font-display text-xl tracking-wide text-white">{partner.name}</span>
             </motion.div>
           ))}

@@ -30,7 +30,7 @@ export function TestemunhosSection() {
         transition={{ duration: 0.8 }}
         className="w-full"
       >
-        <Marquee speed={40} direction="left" pauseOnHover>
+        <Marquee speed={40} direction="left">
           <div className="flex gap-6 py-8 pr-6">
             {testimonials.map((t, i) => (
               <div 

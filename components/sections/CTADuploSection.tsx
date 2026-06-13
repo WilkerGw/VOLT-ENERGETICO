@@ -44,7 +44,7 @@ export function CTADuploSection() {
         >
           <div className="relative z-10 flex h-full flex-col items-center lg:items-start">
             <h3 className="mb-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]">PRIMEIRA LATA, PRIMEIRA ONDA</h3>
-            <p className="mb-8 max-w-sm font-body text-base font-light leading-snug text-white/90 sm:text-lg">
+            <p className="mb-8 max-w-sm font-body text-base font-light leading-snug text-zinc-800/80 sm:text-lg">
               Comece pelo sabor original e entenda por que energia também pode ser gostosa.
             </p>
             <div className="mt-auto pt-8">
@@ -53,8 +53,8 @@ export function CTADuploSection() {
               </button>
             </div>
           </div>
-          <div className="absolute -bottom-20 -right-20 z-0 h-64 w-64 opacity-90 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3 md:h-96 md:w-96">
-            <Image src="/images/latas-empilhadas.webp" alt="Latas VOLT" fill sizes="(max-width: 768px) 16rem, 24rem" className="object-contain" />
+          <div className="absolute -bottom-10 -right-10 z-0 h-64 w-64 opacity-60 transition-transform duration-700 group-hover:scale-110">
+            <Image src="/images/latas-empilhadas.webp" alt="Latas VOLT" fill sizes="(max-width: 768px) 16rem, 20rem" className="object-cover md:object-contain lg:object-cover" />
           </div>
         </motion.div>
 
@@ -75,8 +75,8 @@ export function CTADuploSection() {
               </button>
             </div>
           </div>
-          <div className="absolute -bottom-10 -right-10 z-0 h-64 w-64 opacity-60 transition-transform duration-700 group-hover:scale-110 md:h-80 md:w-80">
-            <Image src="/images/latas-caidas.webp" alt="Latas VOLT" fill sizes="(max-width: 768px) 16rem, 20rem" className="object-contain" />
+          <div className="absolute -bottom-10 -right-10 z-0 h-64 w-64 opacity-60 transition-transform duration-700 group-hover:scale-110">
+            <Image src="/images/latas-caidas.webp" alt="Latas VOLT" fill sizes="(max-width: 768px) 16rem, 20rem" className="object-cover md:object-contain lg:object-cover" />
           </div>
         </motion.div>
 

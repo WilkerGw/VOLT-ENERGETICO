@@ -1,41 +1,40 @@
 'use client'
 import { motion } from 'framer-motion'
+import type { ReactNode } from 'react'
 
 interface MarqueeProps {
-  children: React.ReactNode
+  children: ReactNode
   speed?: number // pixels per second
   direction?: 'left' | 'right'
-  pauseOnHover?: boolean
 }
 
 export function Marquee({
   children,
   speed = 60,
   direction = 'left',
-  pauseOnHover = true,
 }: MarqueeProps) {
-  const directionMultiplier = direction === 'left' ? -1 : 1
+  const duration = (100 / speed) * 10
+  const initialX = direction === 'left' ? '0%' : '-50%'
+  const targetX = direction === 'left' ? '-50%' : '0%'
 
   return (
-    <div
-      style={{ overflow: 'hidden', display: 'flex' }}
-      className={pauseOnHover ? 'group' : ''}
-    >
-      {[0, 1].map((i) => (
-        <motion.div
-          key={i}
-          style={{ display: 'flex', flexShrink: 0 }}
-          animate={{ x: [0, `${directionMultiplier * -100}%`] }}
-          transition={{
-            duration: 100 / speed * 10,
-            ease: 'linear',
-            repeat: Infinity,
-          }}
-          className={pauseOnHover ? 'group-hover:[animation-play-state:paused]' : ''}
-        >
+    <div className="flex overflow-hidden">
+      <motion.div
+        className="flex w-max shrink-0 will-change-transform"
+        initial={{ x: initialX }}
+        animate={{ x: targetX }}
+        transition={{
+          duration,
+          ease: 'linear',
+          repeat: Infinity,
+          repeatType: 'loop',
+        }}
+      >
+        <div className="flex shrink-0">{children}</div>
+        <div aria-hidden="true" className="flex shrink-0">
           {children}
-        </motion.div>
-      ))}
+        </div>
+      </motion.div>
     </div>
   )
 }
