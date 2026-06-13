@@ -32,11 +32,11 @@ export function FormulaSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
+      <div className="relative z-10 mx-auto w-full max-w-5xl text-center lg:text-left">
         <SplitHeadline
           tag="h2"
           text="POR TRÁS DO PRAZER,\nUMA FÓRMULA QUE TRABALHA"
-          className="mx-auto mb-6 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
+          className="mx-auto mb-6 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
         />
 
         <motion.p
@@ -44,7 +44,7 @@ export function FormulaSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mx-auto mb-20 max-w-2xl font-body text-lg font-light text-black/70 md:text-xl"
+          className="mx-auto mb-20 max-w-2xl font-body text-lg font-light text-black/70 md:text-xl lg:mx-0"
         >
           Cafeína, taurina, CoQ10 e vitaminas em uma bebida leve, gaseificada e fácil de encaixar no dia.
         </motion.p>

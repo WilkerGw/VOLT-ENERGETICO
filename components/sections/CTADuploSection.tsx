@@ -21,11 +21,11 @@ export function CTADuploSection() {
 
   return (
     <section aria-labelledby="cta-duplo-heading" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-(--green-dark) px-6 py-24 md:px-12">
-      <div className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
+      <div className="mx-auto mb-12 w-full max-w-4xl text-center md:mb-16 lg:text-left">
         <SplitHeadline
           tag="h2"
           text="ESCOLHA COMO VOCÊ QUER\nENTRAR NA ONDA"
-          className="mx-auto mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]"
+          className="mx-auto mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
         />
       </div>
 
@@ -40,9 +40,9 @@ export function CTADuploSection() {
         <motion.div
           variants={cardLeftVariants}
           style={{ transformStyle: 'preserve-3d' }}
-          className="group relative flex min-h-[420px] flex-1 flex-col overflow-hidden rounded-[28px] bg-(--green-volts) p-7 text-white shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-10 md:rounded-[40px]"
+          className="group relative flex min-h-[420px] flex-1 flex-col overflow-hidden rounded-[28px] bg-(--green-volts) p-7 text-center text-white shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-10 md:rounded-[40px] lg:text-left"
         >
-          <div className="relative z-10 flex h-full flex-col">
+          <div className="relative z-10 flex h-full flex-col items-center lg:items-start">
             <h3 className="mb-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]">PRIMEIRA LATA, PRIMEIRA ONDA</h3>
             <p className="mb-8 max-w-sm font-body text-base font-light leading-snug text-white/90 sm:text-lg">
               Comece pelo sabor original e entenda por que energia também pode ser gostosa.
@@ -62,9 +62,9 @@ export function CTADuploSection() {
         <motion.div
           variants={cardRightVariants}
           style={{ transformStyle: 'preserve-3d' }}
-          className="group relative flex min-h-[420px] flex-1 flex-col overflow-hidden rounded-[28px] bg-black p-7 text-white shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-10 md:rounded-[40px]"
+          className="group relative flex min-h-[420px] flex-1 flex-col overflow-hidden rounded-[28px] bg-black p-7 text-center text-white shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-10 md:rounded-[40px] lg:text-left"
         >
-          <div className="relative z-10 flex h-full flex-col">
+          <div className="relative z-10 flex h-full flex-col items-center lg:items-start">
             <h3 className="mb-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]">VOLT TODO MÊS, SEM FALTAR</h3>
             <p className="mb-8 max-w-sm font-body text-base font-light leading-snug text-white/80 sm:text-lg">
               Monte sua rotina e receba sua dose de prazer funcional antes de acabar.

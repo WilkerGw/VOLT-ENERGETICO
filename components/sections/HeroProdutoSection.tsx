@@ -6,11 +6,11 @@ import { motion, useReducedMotion, useScroll, useTransform, type Variants } from
 import { useStickySection } from '../ui/StickySection'
 
 const featurePills = [
-  { label: '30mg de cafeína', top: '24%', left: '64%' },
-  { label: 'Taurina + vitaminas', top: '31%', left: '59%' },
-  { label: 'Zero açúcar', top: '39%', left: '67%' },
-  { label: 'Abacaxi e hortelã', top: '49%', left: '56%' },
-  { label: '310ml gelada', top: '60%', left: '63%' },
+  { label: '30mg de cafeína', top: '24%', left: '70%' },
+  { label: 'Taurina + vitaminas', top: '33%', left: '70%' },
+  { label: 'Zero açúcar', top: '42%', left: '70%' },
+  { label: 'Abacaxi e hortelã', top: '51%', left: '70%' },
+  { label: '310ml gelada', top: '60%', left: '70%' },
 ]
 
 const listVariants: Variants = {
@@ -49,7 +49,7 @@ export function HeroProdutoSection() {
       <div aria-hidden="true" className="absolute bottom-0 right-0 h-[30%] w-[22%] rounded-tl-[72px] bg-[#DCEB7D]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1588px]">
-        <div className="relative h-[calc(100svh-2rem)] min-h-[590px] overflow-hidden rounded-[28px] bg-[#91D5F2] shadow-[0_24px_80px_rgba(74,122,30,0.12)] sm:h-[calc(100svh-3rem)] sm:min-h-[650px] sm:rounded-[34px] lg:min-h-[620px]">
+        <div className="relative isolate h-[calc(100svh-2rem)] min-h-[590px] overflow-hidden rounded-[28px] bg-[#91D5F2] shadow-[0_24px_80px_rgba(74,122,30,0.12)] sm:h-[calc(100svh-3rem)] sm:min-h-[650px] sm:rounded-[34px] lg:min-h-[620px]">
           <motion.div
             aria-hidden="true"
             style={{ y: skyY }}
@@ -77,16 +77,16 @@ export function HeroProdutoSection() {
             >
               <h2
                 id="hero-produto-heading"
-                className="font-display text-[2.2rem] font-black uppercase leading-[0.94] text-white sm:text-[3.15rem] md:text-[3.65rem] lg:text-[3.55rem] xl:text-[4.15rem]"
+                className="font-display text-[2.2rem] font-black uppercase leading-[0.94] text-white mix-blend-difference [text-shadow:0_8px_24px_rgba(12,38,35,0.18)] md:text-[3.65rem] lg:text-[3.55rem]"
               >
                 Uma bebida proteica em lata. Leve como um refri, séria como seu treino.
               </h2>
 
-              <p className="mx-auto mt-4 max-w-[24rem] font-body text-base font-bold leading-snug text-white/90 sm:text-lg lg:mx-0">
+              <p className="mx-auto mt-4 max-w-[24rem] font-body text-base font-bold leading-snug text-[#4F5A52] [text-shadow:0_1px_10px_rgba(255,255,255,0.36)] sm:text-lg lg:mx-0">
                 Beba Volt é a nova geração de bebidas funcionais.
               </p>
 
-              <p className="mx-auto mt-8 max-w-[22rem] font-label text-[0.68rem] font-black leading-snug text-white/82 sm:mt-10 lg:mx-0">
+              <p className="mx-auto mt-8 max-w-[22rem] font-label text-[0.68rem] font-black leading-snug text-[#4F5A52] [text-shadow:0_1px_8px_rgba(255,255,255,0.34)] sm:mt-10 lg:mx-0">
                 E abrir, beber gelada e seguir.
                 <br />
                 Sem pó, sem shaker, sem desculpa.
@@ -127,7 +127,7 @@ export function HeroProdutoSection() {
                   <motion.li
                     key={pill.label}
                     variants={itemVariants}
-                    className="rounded-full bg-[var(--cream)] px-4 py-2 text-center font-body text-[0.72rem] font-black leading-tight text-[#647044] shadow-[0_12px_26px_rgba(68,99,41,0.12)] sm:text-xs lg:absolute lg:min-w-[9.25rem] lg:px-5 lg:py-2.5"
+                    className="rounded-full bg-[var(--cream)] px-4 py-2 text-center font-body text-[0.72rem] font-black leading-tight text-[#647044] shadow-[0_12px_26px_rgba(68,99,41,0.12)] sm:text-xs lg:absolute lg:min-w-[9.25rem] lg:-translate-x-1/2 lg:px-5 lg:py-2.5"
                     style={{ top: pill.top, left: pill.left }}
                   >
                     {pill.label}
@@ -138,7 +138,7 @@ export function HeroProdutoSection() {
           </div>
         </div>
 
-        <p className="mt-3 text-center font-label text-[0.62rem] font-black text-[#8A9A61] lg:text-left">
+        <p className="mt-3 text-center font-label text-[0.62rem] font-black text-[#8A9A61]">
           Sabores que acompanham seu ritmo
         </p>
       </div>

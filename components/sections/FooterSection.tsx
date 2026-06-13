@@ -18,7 +18,7 @@ export function FooterSection() {
         {/* Influencer Card */}
         <motion.div
           variants={fadeUp}
-          className="group flex flex-1 flex-col items-start justify-between rounded-3xl border border-white/10 bg-white/5 p-10 transition-colors hover:border-(--green-volts) hover:bg-white/10"
+          className="group flex flex-1 flex-col items-center justify-between rounded-3xl border border-white/10 bg-white/5 p-10 text-center transition-colors hover:border-(--green-volts) hover:bg-white/10 lg:items-start lg:text-left"
         >
           <div>
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-(--green-volts) shadow-lg">
@@ -35,7 +35,7 @@ export function FooterSection() {
         {/* Franchise Card */}
         <motion.div
           variants={fadeUp}
-          className="group flex flex-1 flex-col items-start justify-between rounded-3xl border border-white/10 bg-white/5 p-10 transition-colors hover:border-(--green-volts) hover:bg-white/10"
+          className="group flex flex-1 flex-col items-center justify-between rounded-3xl border border-white/10 bg-white/5 p-10 text-center transition-colors hover:border-(--green-volts) hover:bg-white/10 lg:items-start lg:text-left"
         >
           <div>
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-(--green-volts) shadow-lg">

@@ -55,11 +55,11 @@ export function RotinaSection() {
         </motion.div>
 
         {/* Right: Text & List */}
-        <div className="flex-1 text-white">
+        <div className="flex-1 text-center text-white lg:text-left">
           <SplitHeadline
             tag="h2"
             text="A VOLT ENTRA ONDE\nSUA ENERGIA COSTUMA CAIR"
-            className="mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]"
+            className="mx-auto mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
           />
 
           <motion.ul
@@ -67,7 +67,7 @@ export function RotinaSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="space-y-6 font-body text-xl md:text-2xl"
+            className="space-y-6 text-left font-body text-xl md:text-2xl"
           >
             {occasions.map((item, i) => (
               <motion.li
@@ -83,7 +83,7 @@ export function RotinaSection() {
             ))}
           </motion.ul>
           
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 1 }} className="mt-12">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 1 }} className="mt-12 flex justify-center lg:justify-start">
              <button type="button" className="rounded-full bg-white px-8 py-4 font-label font-bold text-(--olive) transition-transform hover:scale-105 active:scale-95">
                 ENCAIXAR NA MINHA ROTINA
              </button>

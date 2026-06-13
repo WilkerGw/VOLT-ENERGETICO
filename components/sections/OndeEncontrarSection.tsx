@@ -14,7 +14,7 @@ export function OndeEncontrarSection() {
 
   return (
     <section aria-labelledby="onde-encontrar-heading" className="flex min-h-screen items-center justify-center px-6 py-24 md:px-12">
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center lg:items-start lg:text-left">
 
         {/* Animated Map Pin Mascot */}
         <motion.div
@@ -30,7 +30,7 @@ export function OndeEncontrarSection() {
         <SplitHeadline
           tag="h2"
           text="A SUA PRÓXIMA VOLT\nPODE ESTAR MAIS PERTO\nDO QUE PARECE"
-          className="mx-auto mb-16 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]"
+          className="mx-auto mb-16 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
         />
 
         {/* Partners Logos / Text */}
@@ -39,7 +39,7 @@ export function OndeEncontrarSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-16 flex flex-wrap justify-center gap-6 md:gap-12"
+          className="mb-16 flex flex-wrap justify-center gap-6 md:gap-12 lg:justify-start"
         >
           {partners.map((partner, i) => (
             <motion.div

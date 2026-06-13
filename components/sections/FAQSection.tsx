@@ -37,11 +37,11 @@ export function FAQSection() {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 lg:flex-row lg:items-start">
 
         {/* Left: Headline & Sticker */}
-        <div className="relative flex-1 lg:sticky lg:top-32">
+        <div className="relative flex-1 text-center lg:sticky lg:top-32 lg:text-left">
           <SplitHeadline
             tag="h2"
             text="ANTES DE ABRIR A LATA,\nTIRA ESSAS DÚVIDAS"
-            className="mb-8 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
+            className="mx-auto mb-8 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}

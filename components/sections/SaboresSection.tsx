@@ -95,7 +95,7 @@ export function SaboresSection() {
             style={{ backgroundColor: `${sabor.color}15` }} // 15% opacity background
           >
             {/* The Can */}
-            <div className="relative mb-8 h-52 w-full drop-shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-2xl sm:h-64 md:h-80">
+            <div className="relative mb-8 h-52 lg:h-40 w-full drop-shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-2xl md:h-80">
               <Image
                 src={sabor.img}
                 alt={`Lata Sabor ${sabor.nome}`}
@@ -106,8 +106,8 @@ export function SaboresSection() {
             </div>
             
             {/* Details */}
-            <div className="text-center">
-              <h3 className="mb-2 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] sm:text-5xl md:text-[2.6rem]" style={{ color: sabor.color }}>
+            <div className="text-center lg:text-left">
+              <h3 className="mb-2 max-w-2xl font-display text-2xl lg:text-xl font-extrabold leading-[0.94] md:text-[2.6rem]" style={{ color: sabor.color }}>
                 {sabor.nome}
               </h3>
               <p className="font-body text-sm font-medium text-black/60">

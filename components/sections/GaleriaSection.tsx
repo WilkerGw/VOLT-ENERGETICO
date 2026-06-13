@@ -115,7 +115,7 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="font-body text-xs sm:text-[13px] md:text-sm font-semibold text-white/95 leading-snug text-center">
+                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
                   Treina, mas não se enxerga como &quot;marombeiro de laboratório&quot;.
                 </p>
               </div>
@@ -137,7 +137,7 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="font-body text-xs sm:text-[13px] md:text-sm font-semibold text-white/95 leading-snug text-center">
+                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
                   Trabalha muito, mas não quer abrir mão do próprio corpo e da cabeça no lugar.
                 </p>
               </div>
@@ -175,7 +175,7 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="font-body text-xs sm:text-[13px] md:text-sm font-semibold text-white/95 leading-snug text-center">
+                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
                   Ama praia, trilha, esportes, festival, cidade, rooftop e quer uma bebida que combine com esse lifestyle.
                 </p>
               </div>
@@ -197,7 +197,7 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="font-body text-xs sm:text-[13px] md:text-sm font-semibold text-white/95 leading-snug text-center">
+                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
                   Cansou de whey grosso, shaker fedido e rituais complicados.
                 </p>
               </div>

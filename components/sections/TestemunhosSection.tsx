@@ -15,11 +15,11 @@ export function TestemunhosSection() {
 
   return (
     <section aria-labelledby="testemunhos-heading" className="flex min-h-screen flex-col justify-center overflow-hidden bg-white py-24">
-      <div className="mx-auto mb-16 max-w-4xl px-6 text-center md:px-12">
+      <div className="mx-auto mb-16 w-full max-w-4xl px-6 text-center md:px-12 lg:text-left">
         <SplitHeadline
           tag="h2"
           text="QUEM PROVOU ENTENDEU\nA DIFERENÇA"
-          className="mx-auto max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
+          className="mx-auto max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
         />
       </div>
 
