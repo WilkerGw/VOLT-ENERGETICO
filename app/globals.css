@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ── Design Tokens ── */
 :root {
-  --green-volts: #7DB33A;
-  --green-dark: #4A7A1E;
-  --green-light: #B5D56A;
-  --cream: #F5F0E8;
-  --blue-sky: #87CEEB;
-  --olive: #6B7A3A;
-  --black: #1A1A1A;
-  --white: #FFFFFF;
+  --green-volts: #7db33a;
+  --green-dark: #4a7a1e;
+  --green-light: #b5d56a;
+  --cream: #f5f0e8;
+  --blue-sky: #87ceeb;
+  --olive: #6b7a3a;
+  --black: #1a1a1a;
+  --white: #ffffff;
 
   --font-display: 'Bricolage Grotesque', sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
@@ -33,11 +33,15 @@ body {
   overflow-x: hidden;
 }
 
-button, [role="button"], a {
+button,
+[role='button'],
+a {
   cursor: pointer;
 }
 
-button:focus-visible, a:focus-visible, input:focus-visible {
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
   outline: 2px solid var(--green-volts);
   outline-offset: 2px;
 }
@@ -53,11 +57,61 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 }
 
 :where(.font-label) {
-  font-family: var(--font-body);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* Shared editorial type scale */
+:where(.section-kicker) {
+  font-family: var(--font-body);
   font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+:where(.section-title) {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+:where(.section-lead) {
+  font-family: var(--font-body);
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+:where(.section-copy) {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+:where(.card-title) {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+:where(.card-copy) {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+:where(.caption-copy) {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+:where(.accordion-title) {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+:where(.accordion-copy) {
+  font-family: var(--font-body);
 }
 
 /* ── Reduced motion ── */
@@ -88,18 +142,34 @@ html {
 
 /* ── Shared Keyframes (GPU-friendly, no JS overhead) ── */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes floatShadow {
-  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
-  50% { transform: translateX(-50%) scale(0.85); opacity: 0.15; }
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(-50%) scale(0.85);
+    opacity: 0.15;
+  }
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @supports (min-height: 100svh) {
@@ -124,13 +194,15 @@ html {
   top: 0;
   transform: translateZ(0);
   transform-origin: center top;
-  transition: border-radius 600ms ease, box-shadow 600ms ease;
+  transition:
+    border-radius 600ms ease,
+    box-shadow 600ms ease;
   will-change: transform;
 }
 
 .sticky-panel::after {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 18%);
-  content: "";
+  content: '';
   inset: 0;
   pointer-events: none;
   position: absolute;

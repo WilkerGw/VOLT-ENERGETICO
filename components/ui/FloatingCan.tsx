@@ -12,8 +12,8 @@ interface FloatingCanProps {
 export function FloatingCan({
   src,
   alt,
-  width = 300,
-  height = 500,
+  width = 200,
+  height = 400,
   className,
 }: FloatingCanProps) {
   return (
@@ -28,7 +28,7 @@ export function FloatingCan({
           alt={alt}
           width={width}
           height={height}
-          sizes="(max-width: 640px) 188px, (max-width: 1024px) 238px, 263px"
+          sizes="(max-width: 420px) 188px, (max-width: 1024px) 238px, 263px"
           style={{ height: 'auto', objectFit: 'contain', width: 'auto' }}
           priority
         />

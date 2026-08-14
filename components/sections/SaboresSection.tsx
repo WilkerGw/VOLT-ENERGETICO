@@ -51,28 +51,29 @@ export function SaboresSection() {
   }
 
   return (
-    <div aria-label="section" id="sabores" className="flex min-h-screen flex-col justify-center px-4 py-24 md:px-12 lg:px-24">
+    <section aria-labelledby="sabores-heading" id="sabores" className="flex min-h-screen flex-col justify-center px-4 py-24 md:px-12 lg:px-24">
       <div className="mx-auto mb-20 flex w-full max-w-7xl flex-col items-center text-center lg:items-start lg:text-left">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-6 rounded-full border border-black/10 px-4 py-1.5 font-label text-sm text-black/60"
+          className="section-kicker mb-6 rounded-full border border-black/10 px-4 py-1.5 text-black/60"
         >
           SABORES
         </motion.div>
         
         <SplitHeadline
+          id="sabores-heading"
           tag="h2"
           text="SABORES QUE NÃO PARECEM\nUMA OBRIGAÇÃO SAUDÁVEL"
-          className="mx-auto max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
+          className="mx-auto max-w-2xl section-title text-black lg:mx-0"
         />
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.25 }}
-          className="mx-auto mt-5 max-w-xl font-body text-sm leading-snug text-black/60 sm:text-base lg:mx-0"
+          className="mx-auto mt-5 max-w-xl section-lead text-black/65 lg:mx-0"
         >
           Do cítrico ao doce intenso, cada lata foi pensada para dar vontade do próximo gole.
         </motion.p>
@@ -107,16 +108,16 @@ export function SaboresSection() {
             
             {/* Details */}
             <div className="text-center lg:text-left">
-              <h3 className="mb-2 max-w-2xl font-display text-2xl lg:text-xl font-extrabold leading-[0.94] md:text-[2.6rem]" style={{ color: sabor.color }}>
+              <h3 className="mb-2 card-title" style={{ color: sabor.color }}>
                 {sabor.nome}
               </h3>
-              <p className="font-body text-sm font-medium text-black/60">
+              <p className="card-copy text-black/60">
                 {sabor.desc}
               </p>
             </div>
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </section>
   )
 }

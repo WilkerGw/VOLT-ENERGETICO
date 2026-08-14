@@ -39,9 +39,10 @@ export function FAQSection() {
         {/* Left: Headline & Sticker */}
         <div className="relative flex-1 text-center lg:sticky lg:top-32 lg:text-left">
           <SplitHeadline
+            id="faq-heading"
             tag="h2"
             text="ANTES DE ABRIR A LATA,\nTIRA ESSAS DÚVIDAS"
-            className="mx-auto mb-8 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
+            className="mx-auto mb-8 max-w-2xl section-title text-black lg:mx-0"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}

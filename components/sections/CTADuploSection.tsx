@@ -23,9 +23,10 @@ export function CTADuploSection() {
     <section aria-labelledby="cta-duplo-heading" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-(--green-dark) px-6 py-24 md:px-12">
       <div className="mx-auto mb-12 w-full max-w-4xl text-center md:mb-16 lg:text-left">
         <SplitHeadline
+          id="cta-duplo-heading"
           tag="h2"
           text="ESCOLHA COMO VOCÊ QUER\nENTRAR NA ONDA"
-          className="mx-auto mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
+          className="mx-auto mb-12 max-w-2xl section-title text-white lg:mx-0"
         />
       </div>
 
@@ -43,8 +44,8 @@ export function CTADuploSection() {
           className="group relative flex min-h-[420px] flex-1 flex-col overflow-hidden rounded-[28px] bg-(--green-volts) p-7 text-center text-white shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-10 md:rounded-[40px] lg:text-left"
         >
           <div className="relative z-10 flex h-full flex-col items-center lg:items-start">
-            <h3 className="mb-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]">PRIMEIRA LATA, PRIMEIRA ONDA</h3>
-            <p className="mb-8 max-w-sm font-body text-base font-light leading-snug text-zinc-800/80 sm:text-lg">
+            <h3 className="mb-4 max-w-xl card-title text-white">PRIMEIRA LATA, PRIMEIRA ONDA</h3>
+            <p className="mb-8 max-w-sm card-copy text-zinc-800/80">
               Comece pelo sabor original e entenda por que energia também pode ser gostosa.
             </p>
             <div className="mt-auto pt-8">
@@ -65,8 +66,8 @@ export function CTADuploSection() {
           className="group relative flex min-h-[420px] flex-1 flex-col overflow-hidden rounded-[28px] bg-black p-7 text-center text-white shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-10 md:rounded-[40px] lg:text-left"
         >
           <div className="relative z-10 flex h-full flex-col items-center lg:items-start">
-            <h3 className="mb-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]">VOLT TODO MÊS, SEM FALTAR</h3>
-            <p className="mb-8 max-w-sm font-body text-base font-light leading-snug text-white/80 sm:text-lg">
+            <h3 className="mb-4 max-w-xl card-title text-white">VOLT TODO MÊS, SEM FALTAR</h3>
+            <p className="mb-8 max-w-sm card-copy text-white/80">
               Monte sua rotina e receba sua dose de prazer funcional antes de acabar.
             </p>
             <div className="mt-auto pt-8">

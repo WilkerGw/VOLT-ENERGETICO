@@ -24,8 +24,8 @@ export function FooterSection() {
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-(--green-volts) shadow-lg">
               <Camera className="h-8 w-8 text-white" />
             </div>
-            <h3 className="mb-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]">QUERO LEVAR A ONDA COMIGO</h3>
-            <p className="font-body text-white/70">Crie conteúdo, conte sua rotina e ajude a energia leve a chegar mais longe.</p>
+            <h3 className="mb-4 max-w-xl card-title text-white">QUERO LEVAR A ONDA COMIGO</h3>
+            <p className="card-copy text-white/70">Crie conteúdo, conte sua rotina e ajude a energia leve a chegar mais longe.</p>
           </div>
           <button type="button" className="mt-12 font-label text-sm font-bold text-(--green-volts) underline transition-colors group-hover:text-white">
             ENTRAR NA ONDA →
@@ -41,8 +41,8 @@ export function FooterSection() {
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-(--green-volts) shadow-lg">
               <Store className="h-8 w-8 text-white" />
             </div>
-            <h3 className="mb-4 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem]">QUERO COLOCAR VOLT NA MINHA LOJA</h3>
-            <p className="font-body text-white/70">Leve uma bebida funcional, bonita e fácil de desejar para seus clientes.</p>
+            <h3 className="mb-4 max-w-xl card-title text-white">QUERO COLOCAR VOLT NA MINHA LOJA</h3>
+            <p className="card-copy text-white/70">Leve uma bebida funcional, bonita e fácil de desejar para seus clientes.</p>
           </div>
           <button type="button" className="mt-12 font-label text-sm font-bold text-(--green-volts) underline transition-colors group-hover:text-white">
             SEJA UM REVENDEDOR →

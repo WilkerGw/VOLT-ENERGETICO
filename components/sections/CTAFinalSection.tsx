@@ -16,9 +16,10 @@ export function CTAFinalSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <SplitHeadline
+          id="cta-final-heading"
           tag="h2"
           text="SE A SUA VIDA JÁ TEM RITMO,\nFALTA UMA BEBIDA\nQUE ACOMPANHE"
-          className="mx-auto mb-12 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
+          className="mx-auto mb-12 max-w-2xl section-title text-black lg:mx-0"
         />
 
         <motion.div

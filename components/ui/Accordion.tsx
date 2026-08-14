@@ -22,7 +22,7 @@ export function Accordion({ title, children, defaultOpen = false }: AccordionPro
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        <span className="font-body text-xl font-medium text-black md:text-2xl">
+        <span className="accordion-title text-black">
           {title}
         </span>
         <motion.span
@@ -62,7 +62,7 @@ export function Accordion({ title, children, defaultOpen = false }: AccordionPro
             }}
             style={{ overflow: 'hidden' }}
           >
-            <div className="pt-4 pb-2 pr-12 text-lg text-black/70">
+            <div className="accordion-copy pt-4 pb-2 pr-12 text-black/70">
               {children}
             </div>
           </motion.div>

@@ -57,9 +57,10 @@ export function RotinaSection() {
         {/* Right: Text & List */}
         <div className="flex-1 text-center text-white lg:text-left">
           <SplitHeadline
+            id="rotina-heading"
             tag="h2"
             text="A VOLT ENTRA ONDE\nSUA ENERGIA COSTUMA CAIR"
-            className="mx-auto mb-12 max-w-2xl font-display text-2xl lg:text-[2.3rem] font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
+            className="mx-auto mb-12 max-w-2xl section-title text-white lg:mx-0"
           />
 
           <motion.ul
@@ -67,7 +68,7 @@ export function RotinaSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="space-y-6 text-left font-body text-xl md:text-2xl"
+            className="space-y-5 text-left section-copy text-white/90"
           >
             {occasions.map((item, i) => (
               <motion.li
@@ -78,7 +79,7 @@ export function RotinaSection() {
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-2xl shadow-inner">
                   {item.icon}
                 </div>
-                <span className="font-light md:text-lg">{item.text}</span>
+                <span className="font-medium">{item.text}</span>
               </motion.li>
             ))}
           </motion.ul>

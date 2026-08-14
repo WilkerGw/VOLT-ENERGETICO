@@ -20,19 +20,20 @@ export function UGCSection() {
   }
 
   return (
-    <div className="min-h-screen px-4 py-24 md:px-12 lg:px-24">
+    <section aria-labelledby="ugc-heading" className="min-h-screen px-4 py-24 md:px-12 lg:px-24">
       <AnimatedSection className="mx-auto max-w-7xl">
         <div className="mb-20 lg:mb-2 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-6 inline-block rounded-full border border-black/10 px-4 py-1.5 font-label text-sm text-black/60"
+            className="section-kicker mb-6 inline-block rounded-full border border-black/10 px-4 py-1.5 text-black/60"
           >
             VIDA REAL
           </motion.div>
           <motion.h2 
-            className="mx-auto max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
+            id="ugc-heading"
+            className="mx-auto max-w-2xl section-title text-black lg:mx-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,6 +77,6 @@ export function UGCSection() {
 
         </div>
       </AnimatedSection>
-    </div>
+    </section>
   )
 }

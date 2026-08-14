@@ -17,9 +17,10 @@ export function TestemunhosSection() {
     <section aria-labelledby="testemunhos-heading" className="flex min-h-screen flex-col justify-center overflow-hidden bg-white py-24">
       <div className="mx-auto mb-16 w-full max-w-4xl px-6 text-center md:px-12 lg:text-left">
         <SplitHeadline
+          id="testemunhos-heading"
           tag="h2"
           text="QUEM PROVOU ENTENDEU\nA DIFERENÇA"
-          className="mx-auto max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem] lg:mx-0"
+          className="mx-auto max-w-2xl section-title text-black lg:mx-0"
         />
       </div>
 
@@ -46,7 +47,7 @@ export function TestemunhosSection() {
                       </svg>
                     ))}
                   </div>
-                  <p className="font-body text-lg text-black/80">&ldquo;{t.text}&rdquo;</p>
+                  <p className="card-copy text-black/80">&ldquo;{t.text}&rdquo;</p>
                 </div>
                 <div className="mt-8 flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-(--cream) font-display text-xl text-black">

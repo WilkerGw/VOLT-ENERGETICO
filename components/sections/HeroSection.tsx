@@ -35,7 +35,14 @@ const heroCans = [
   },
 ]
 
-function Hotspot({ x, y, label, tooltip, defaultOpen = false, tooltipSide = 'right' }: HotspotProps) {
+function Hotspot({
+  x,
+  y,
+  label,
+  tooltip,
+  defaultOpen = false,
+  tooltipSide = 'right',
+}: HotspotProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
   const tooltipId = useId()
 
@@ -58,7 +65,7 @@ function Hotspot({ x, y, label, tooltip, defaultOpen = false, tooltipSide = 'rig
         aria-describedby={isOpen ? tooltipId : undefined}
       >
         <span className="absolute inset-0 rounded-full bg-white/80 opacity-40 animate-ping group-hover:animate-none" />
-        <span className="relative z-10 leading-none">{label}</span>
+        <span className="relative z-10">{label}</span>
       </button>
 
       <AnimatePresence>
@@ -72,7 +79,7 @@ function Hotspot({ x, y, label, tooltip, defaultOpen = false, tooltipSide = 'rig
             transition={{ type: 'spring', stiffness: 210, damping: 18 }}
             className={`pointer-events-none absolute ${tooltipSide === 'left' ? 'right-9' : 'left-9'} top-1/2 z-40 w-56 -translate-y-1/2 rounded-[20px] border border-white/35 bg-white/12 px-5 py-4 text-white shadow-[0_24px_80px_rgba(32,44,22,0.22)] backdrop-blur-md`}
           >
-            <p className="font-body text-xs font-semibold leading-snug">{tooltip}</p>
+            <p className="font-body text-xs font-semibold">{tooltip}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -126,7 +133,9 @@ function getNotchedPath(w: number, h: number) {
     L 0,${r}
     C 0,${r * 0.42} ${r * 0.42},0 ${r},0
     Z
-  `.replace(/\s+/g, ' ').trim()
+  `
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 export function HeroSection() {
@@ -173,13 +182,10 @@ export function HeroSection() {
   }, [prefersReducedMotion])
 
   return (
-    <section
-      aria-labelledby="hero-heading"
-      className="relative flex w-full overflow-hidden px-3 py-5"
-    >
+    <section aria-labelledby="hero-heading" className="relative flex w-full overflow-hidden p-4">
       <div
         ref={containerRef}
-        className="relative z-10 h-[calc(100svh-2.5rem)] min-h-[640px] w-full max-w-[1588px] overflow-visible rounded-[22px] md:min-h-[650px] lg:min-h-[640px]"
+        className="relative z-10 min-h-[700px] lg:min-h-[600px] w-full lg:max-w-[1440px] lg:max-h-[100vh] lg:mx-auto rounded-[22px] lg:px-10"
       >
         <div className="pointer-events-none absolute inset-0 z-0 h-full w-full">
           <svg className="h-full w-full" width={dims.width} height={dims.height}>
@@ -190,18 +196,11 @@ export function HeroSection() {
                 <stop offset="100%" stopColor="#6F8354" />
               </linearGradient>
             </defs>
-            <path
-              d={getNotchedPath(dims.width, dims.height)}
-              fill="url(#heroWaveGradient)"
-            />
+            <path d={getNotchedPath(dims.width, dims.height)} fill="url(#heroWaveGradient)" />
           </svg>
         </div>
 
-        <div className="pointer-events-none absolute left-1/2 -top-2 lg:top-0 z-30 -translate-x-1/2 select-none font-display text-2xl lg:text-5xl font-black leading-none text-[#73875B]">
-          Volt
-        </div>
-
-        <p className="pointer-events-none absolute right-[27%] top-[12%] z-50 hidden max-w-[340px] text-[6px] font-bold uppercase tracking-[0.22em] text-white/35 lg:block">
+        <p className="absolute right-16 top-8 z-50 hidden text-[.7rem] font-bold uppercase tracking-[0.10em] text-white/80 lg:block max-w-[20%] text-center">
           A nova rotina pede energia funcional, sabor refrescante e ritmo leve.
         </p>
 
@@ -219,40 +218,40 @@ export function HeroSection() {
           />
         </svg>
 
-        <div className="relative z-40 mt-10 flex flex-col gap-5 px-4 text-center md:mt-0 md:h-full md:max-w-[43%] md:justify-center md:px-0 md:pl-10 md:text-left lg:max-w-[40%] lg:pl-12">
+        <div className="mx-auto lg:mx-0 relative lg:top-1/2 lg:-translate-y-1/2 flex flex-col px-4 lg:px-12 py-12 w-full max-w-[300px] lg:max-w-[440px]">
           <h1
             id="hero-heading"
-            className="pointer-events-none flex select-none flex-col items-center justify-center text-center font-display text-[clamp(4.25rem,13vw,5rem)] font-black uppercase leading-[0.82] text-[#DCEB91]/78 md:items-start md:text-left md:text-[5rem] lg:left-0 lg:translate-x-0 lg:text-[9rem]"
+            className="flex flex-col items-center lg:items-start text-[5rem] lg:text-[8rem] font-black uppercase leading-[.9] text-[#DCEB91]/78"
           >
             <span>BEBA</span>
             <span>VOLT</span>
           </h1>
-            <p className="text-white  font-display text-xl font-black uppercase leading-[1.04] md:text-[1.65rem] lg:text-[2rem]">
-              A energia em lata que vive no mesmo ritmo que você
-            </p>
-            <p className="mx-auto max-w-[18rem] text-sm  font-bold leading-snug text-white/86 md:mx-0">
-              30mg de cafeína, zero açúcar e sabores refrescantes.
-            </p>
-            <button
-              type="button"
-              onClick={() => window.open('https://wa.me/5511967173625', '_blank', 'noopener,noreferrer')}
-              className="group relative z-50 mx-2 rounded-md bg-white px-6 py-3 text-[#415435] shadow-[0_18px_40px_rgba(42,56,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-0 sm:mx-auto md:mx-0 md:w-[min(100%,24rem)] lg:w-md"
-              aria-label="Conversar com a VOLT pelo WhatsApp"
-            >
-              <span className="font-label text-[9px] font-black tracking-[0.12em] transition-colors sm:text-[10px]">
-                ENCONTRAR MINHA VOLT IDEAL
-              </span>
-            </button>
-          <span className="text-[.7rem] font-black uppercase  text-white/55 md:block">
-            PRIMEIRO LOTE - CONDIÇÕES ESPECIAIS DE LANÇAMENTO
+          <p className=" text-white/90 font-display text-[1rem] font-semibold uppercase leading-[1.2] mt-4 mb-8 text-center lg:text-start">
+            A energia em lata que vive no mesmo ritmo que você
+          </p>
+          <p className="mx-auto max-w-[18rem] lg:max-w-[100%] text-center lg:text-start text-[.9rem] text-white/86 md:mx-0">
+            30mg de cafeína, zero açúcar e sabores refrescantes.
+          </p>
+          <button
+            type="button"
+            onClick={() =>
+              window.open('https://wa.me/5511967173625', '_blank', 'noopener,noreferrer')
+            }
+            className="z-50 rounded-md bg-white my-2 px-6 py-3 text-[#415435] shadow-black/20 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#22321A] hover:text-white active:translate-y-1 md:mx-0 w-full"
+            aria-label="Conversar com a VOLT pelo WhatsApp"
+          >
+            <span className="font-label text-[.7rem] font-semibold transition-colors">
+              Fale com um representante
+            </span>
+          </button>
+          <span className="z-50 text-[.9rem] text-white/80 text-center lg:text-start">
+            Primeiro lote com condições especiais de pagamento!
           </span>
         </div>
-        <div className="absolute left-1/2 -bottom-45 z-20 -translate-x-1/2 -translate-y-1/2 rotate-12 transform scale-[0.74] md:bottom-auto md:left-[70%] md:top-[58%] md:scale-[0.92] lg:left-[70%] lg:top-[55%] lg:scale-[1.22]">
-          <h1
-          className="-rotate-12 opacity-20 pointer-events-none absolute left-1/2 top-[5%] z-10 flex -translate-x-1/2 select-none flex-col items-center justify-center text-center font-display text-[10rem] font-black uppercase leading-[0.82] text-[#DCEB91]/78 md:left-[48%] md:top-[13%] md:text-[7.6rem] lg:text-[9rem] xl:text-[10.4rem]"
-        >
-          <span>BEBA</span>
-          <span>VOLT</span>
+        <div className="absolute left-1/2 -bottom-45 z-20 -translate-x-1/2 -translate-y-1/2 rotate-12 transform scale-[0.74] md:bottom-auto md:left-[70%] md:top-[58%] md:scale-[0.92] lg:left-[70%] lg:top-[55%] lg:scale-[1]">
+          <h1 className="-rotate-12 opacity-20 pointer-events-none absolute left-1/2 top-[5%] z-10 flex -translate-x-1/2 select-none flex-col items-center justify-center text-center font-display text-[10rem] font-black uppercase leading-[1.1] text-[#DCEB91]/78 md:left-[48%] md:top-[13%] md:text-[7.6rem] lg:text-[9rem] xl:text-[10.4rem]">
+            <span>BEBA</span>
+            <span>VOLT</span>
           </h1>
           <motion.div
             aria-hidden="true"
@@ -286,23 +285,47 @@ export function HeroSection() {
               transition={{ type: 'spring', stiffness: 140, damping: 18, mass: 0.75 }}
               className="relative z-10"
             >
-              <FloatingCan src={activeCan.src} alt={activeCan.alt} width={270} height={465} />
+              <FloatingCan src={activeCan.src} alt={activeCan.alt} width={260} height={465} />
             </motion.div>
           </AnimatePresence>
 
-          <Hotspot x="44%" y="17%" label="+" tooltip="30mg de cafeína para foco estendido e energia limpa." />
-          <Hotspot x="68%" y="43%" label="x" tooltip="Taurina + blend de vitaminas e minerais para energia funcional." />
-          <Hotspot x="23%" y="76%" label="+" tooltip="Sabor gelado, leve e sem açúcar para acompanhar sua rotina." />
+          <Hotspot
+            x="44%"
+            y="17%"
+            label="+"
+            tooltip="30mg de cafeína para foco estendido e energia limpa."
+          />
+          <Hotspot
+            x="68%"
+            y="43%"
+            label="x"
+            tooltip="Taurina + blend de vitaminas e minerais para energia funcional."
+          />
+          <Hotspot
+            x="23%"
+            y="76%"
+            label="+"
+            tooltip="Sabor gelado, leve e sem açúcar para acompanhar sua rotina."
+          />
         </div>
 
-        <div className="absolute bottom-[15%] right-[18%] z-50 hidden text-left text-xs leading-snug text-white/78 lg:block">
-          <p className="border-l border-white/45 pl-4 font-black text-white">+ Mais que uma bebida</p>
+        <div className="absolute bottom-[15%] right-[18%] z-50 hidden text-left text-xs text-white/78 lg:block">
+          <p className="border-l border-white/45 pl-4 font-black text-white">
+            + Mais que uma bebida
+          </p>
           <p className="pl-4 text-white/72">Sua vitalidade em forma de lata.</p>
         </div>
 
-        <div className="pointer-events-none absolute bottom-10 right-10 lg:right-[17%] lg:top-[17%] z-50 h-24 w-24 select-none lg:block" style={{ animation: 'spin 12s linear infinite' }}>
+        <div
+          className="pointer-events-none absolute bottom-10 right-10 lg:right-[17%] lg:top-[17%] z-50 h-24 w-24 select-none lg:block"
+          style={{ animation: 'spin 12s linear infinite' }}
+        >
           <svg className="h-full w-full" viewBox="0 0 100 100">
-            <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+            <path
+              id="circlePath"
+              d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+              fill="none"
+            />
             <text className="font-label text-[6px] fill-white/70 font-black tracking-widest">
               <textPath href="#circlePath">
                 VOLT ENERGY MATTERS • 30MG CAFFEINE • ZERO SUGAR •

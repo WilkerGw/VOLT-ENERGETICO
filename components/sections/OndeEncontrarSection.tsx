@@ -128,9 +128,10 @@ export function OndeEncontrarSection() {
         </motion.div>
 
         <SplitHeadline
+          id="onde-encontrar-heading"
           tag="h2"
           text="A SUA PRÓXIMA VOLT\nPODE ESTAR MAIS PERTO\nDO QUE PARECE"
-          className="mx-auto mb-16 max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-white sm:text-5xl md:text-[2.6rem] lg:mx-0"
+          className="mx-auto mb-16 max-w-2xl section-title text-white lg:mx-0"
         />
 
         {/* Partners Logos / Text */}

@@ -23,7 +23,6 @@ export default function Home() {
     <>
       <main aria-label="page" className="w-full">
         <StickyStack>
-          
           {/* 1. Hero */}
           <StickySection zIndex={10} bgColor="var(--cream)" scrollHeight="150vh">
             <HeroSection />
@@ -34,14 +33,14 @@ export default function Home() {
             <ManifestoSection />
           </StickySection>
 
-          {/* 3. Galeria Lifestyle */}
-          <StickySection zIndex={30} bgColor="var(--cream)" scrollHeight="150vh">
-            <GaleriaSection />
-          </StickySection>
-
           {/* 4. Proposta de Valor */}
           <StickySection zIndex={40} bgColor="#d9e979" scrollHeight="150vh">
             <PropostaSection />
+          </StickySection>
+
+          {/* 3. Galeria Lifestyle */}
+          <StickySection zIndex={30} bgColor="var(--cream)" scrollHeight="150vh">
+            <GaleriaSection />
           </StickySection>
 
           {/* 5. Hero Produto */}
@@ -98,7 +97,6 @@ export default function Home() {
           <StickySection zIndex={150} bgColor="var(--green-dark)" scrollHeight="100vh">
             <FooterSection />
           </StickySection>
-
         </StickyStack>
       </main>
 

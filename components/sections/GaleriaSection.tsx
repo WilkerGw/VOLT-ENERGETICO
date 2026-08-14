@@ -20,16 +20,15 @@ export function GaleriaSection() {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { type: 'spring', stiffness: 80, damping: 15 }
-    }
+      transition: { type: 'spring', stiffness: 80, damping: 15 },
+    },
   }
 
   return (
     <section
       aria-labelledby="galeria-heading"
-      className="relative min-h-screen px-6 py-24 md:px-12 lg:px-24 overflow-hidden bg-[var(--cream)]"
+      className="relative min-h-screen overflow-hidden bg-[var(--cream)]"
     >
-
       {/* Background Left Wave Shape */}
       <div className="absolute left-0 top-0 bottom-0 w-[20vw] z-0 opacity-15 pointer-events-none hidden lg:block">
         <svg className="w-full h-full" viewBox="0 0 200 800" fill="none" preserveAspectRatio="none">
@@ -44,16 +43,14 @@ export function GaleriaSection() {
         </svg>
       </div>
 
-      <AnimatedSection className="relative z-10 mx-auto max-w-7xl">
-
+      <AnimatedSection className="relative z-10 mx-auto max-w-7xl p-4 lg:p-8">
         {/* Header Block with Reading Mascot */}
         <div className="relative mx-auto mb-4 flex max-w-5xl flex-col items-center justify-center gap-8 md:flex-row md:gap-12 lg:mx-0 lg:justify-start">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-
             {/* Top Tag */}
             <motion.div
               variants={fadeUp}
-              className="mb-4 inline-block font-label text-[11px] text-[var(--olive)] font-black tracking-widest uppercase select-none"
+              className="section-kicker text-[var(--olive)] select-none"
             >
               A VOLT é pra quem
             </motion.div>
@@ -61,22 +58,17 @@ export function GaleriaSection() {
             {/* Main Title */}
             <motion.h2
               id="galeria-heading"
-              className="max-w-2xl font-display text-2xl font-extrabold leading-[0.94] text-black sm:text-5xl md:text-[2.6rem]"
+              className="section-title text-[1.7rem] lg:text-[2rem] my-6 lg:my-4
+ text-black lg:max-w-[73%]"
               variants={fadeUp}
             >
-              SINTA O QUE TE ELEVA, A
-              VOLT FOI FEITA PRA VOCÊ
+              Sinta o que te eleva, a Volt foi feita pra você.
             </motion.h2>
 
             {/* Subtitle */}
-            <motion.p
-              className="mt-4 max-w-md font-body text-sm leading-snug text-black/60 sm:text-base"
-              variants={fadeUp}
-            >
-              Se você quer um corpo forte, uma mente leve e uma rotina
-              possível, essa é a sua onda.
+            <motion.p className="lg:max-w-[60%] section-lead text-black/65" variants={fadeUp}>
+              Se você quer um corpo forte, uma mente leve e uma rotina possível, essa é a sua onda.
             </motion.p>
-
           </div>
 
           {/* Whimsical Mascot Reading Book */}
@@ -97,11 +89,13 @@ export function GaleriaSection() {
           </motion.div>
         </div>
 
-        {/* Responsive Grid with Parallax Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-
+        {/* Layout responsivo com Flexbox e colunas em parallax */}
+        <div className="flex w-full lg:w-[80%] lg:mx-auto flex-col gap-6 sm:flex-row sm:flex-wrap lg:flex-nowrap lg:gap-8">
           {/* Column 1 - Guy on Bench (Slow Parallax) */}
-          <ParallaxLayer speed={0.03} className="flex flex-col">
+          <ParallaxLayer
+            speed={0.03}
+            className="flex w-full flex-col sm:w-[calc(50%-0.75rem)] lg:w-auto lg:flex-1"
+          >
             <motion.div
               variants={itemVariants}
               className="relative overflow-hidden rounded-[32px] md:rounded-[40px] pt-[140%] shadow-xl group border border-black/5"
@@ -115,7 +109,7 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
+                <p className="caption-copy text-center text-white/95 lg:text-left">
                   Treina, mas não se enxerga como &quot;marombeiro de laboratório&quot;.
                 </p>
               </div>
@@ -123,7 +117,7 @@ export function GaleriaSection() {
           </ParallaxLayer>
 
           {/* Column 2 - Guy on Terrace (Normal speed) */}
-          <div className="flex flex-col">
+          <div className="flex w-full flex-col sm:w-[calc(50%-0.75rem)] lg:w-auto lg:flex-1">
             <motion.div
               variants={itemVariants}
               className="relative overflow-hidden rounded-[32px] md:rounded-[40px] pt-[140%] shadow-xl group border border-black/5"
@@ -137,7 +131,7 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
+                <p className="caption-copy text-center text-white/95 lg:text-left">
                   Trabalha muito, mas não quer abrir mão do próprio corpo e da cabeça no lugar.
                 </p>
               </div>
@@ -145,11 +139,14 @@ export function GaleriaSection() {
           </div>
 
           {/* Column 3 - Double split Column (Fast Parallax) */}
-          <ParallaxLayer speed={-0.03} className="flex flex-col gap-6 lg:gap-8">
+          <ParallaxLayer
+            speed={-0.03}
+            className="flex w-full flex-col gap-6  lg:w-auto lg:flex-1 lg:gap-8"
+          >
             {/* Top smaller visual card */}
             <motion.div
               variants={itemVariants}
-              className="relative overflow-hidden rounded-[24px] md:rounded-[32px] pt-[80%] shadow-md group border border-black/5"
+              className="relative overflow-hidden rounded-[24px] md:rounded-[32px] pt-[50%] shadow-md group border border-black/5"
             >
               <Image
                 src={images[1].src}
@@ -164,7 +161,7 @@ export function GaleriaSection() {
             {/* Bottom standard visual card */}
             <motion.div
               variants={itemVariants}
-              className="relative overflow-hidden rounded-[32px] md:rounded-[40px] pt-[120%] shadow-xl group border border-black/5"
+              className="relative overflow-hidden rounded-[32px] md:rounded-[40px] pt-[100%] shadow-xl group border border-black/5"
             >
               <Image
                 src={images[2].src}
@@ -175,15 +172,16 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
-                  Ama praia, trilha, esportes, festival, cidade, rooftop e quer uma bebida que combine com esse lifestyle.
+                <p className="caption-copy text-center text-white/95 lg:text-left">
+                  Ama praia, trilha, esportes, festival, cidade, rooftop e quer uma bebida que
+                  combine com esse lifestyle.
                 </p>
               </div>
             </motion.div>
           </ParallaxLayer>
 
           {/* Column 4 - Guy in Kitchen (Normal speed / Slightly offset) */}
-          <div className="flex flex-col lg:pt-8">
+          <div className="flex w-full flex-col sm:w-[calc(50%-0.75rem)] lg:w-auto lg:flex-1 lg:pt-8">
             <motion.div
               variants={itemVariants}
               className="relative overflow-hidden rounded-[32px] md:rounded-[40px] pt-[140%] shadow-xl group border border-black/5"
@@ -197,13 +195,12 @@ export function GaleriaSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <p className="text-center font-body text-xs font-semibold leading-snug text-white/95 sm:text-[13px] md:text-sm lg:text-left">
+                <p className="caption-copy text-center text-white/95 lg:text-left">
                   Cansou de whey grosso, shaker fedido e rituais complicados.
                 </p>
               </div>
             </motion.div>
           </div>
-
         </div>
       </AnimatedSection>
     </section>
